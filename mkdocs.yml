@@ -1,0 +1,94 @@
+site_name: PyPropel
+
+repo_url: https://github.com/2003100127/pypropel
+repo_name: jsun/pypropel
+
+
+theme:
+#  logo: img/index/PyPropel-logo.png
+  name: material
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.code.annotate
+    - navigation.tabs
+    - navigation.instant
+    - navigation.expand
+    - navigation.top
+    - navigation.path
+    - navigation.footer
+#    - toc.integrate
+    - content.footnote.tooltips
+
+  icon:
+    repo: fontawesome/brands/git-alt
+
+  palette:
+    # Palette toggle for light mode
+#    - accent: pink
+    - primary: purple
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+
+markdown_extensions:
+  # icons
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - toc:
+      permalink: True
+      baselevel: 2
+      separator: "_"
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Admonitions
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # Formatting superscripts
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+
+extra:
+  consent:
+    actions:
+      - accept
+      - manage
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/2003100127
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/2003100127
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jianfeng-sun-2ba9b1132/
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/Jianfeng_Sunny
+
+plugins:
+  - tags
+  - search
+
+copyright: Copyright &copy; 2024 Jianfeng Sun
