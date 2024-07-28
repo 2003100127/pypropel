@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 import time
 import numpy as np
-from pyprocpp.util.Console import Console
+from pypropel.util.Console import Console
 
 
 class Assemble:
@@ -137,8 +137,8 @@ class Assemble:
 
 
 if __name__ == "__main__":
-    from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
-    from pyprocpp.path import to
+    from pypropel.prot.sequence.Fasta import Fasta as sfasta
+    from pypropel.path import to
     import tmkit as tmk
 
     sequence = sfasta().get(
@@ -163,7 +163,7 @@ if __name__ == "__main__":
     features_1d_in = [[] for i in range(len(sequence))]
     features_2d_in = positions
 
-    from pyprocpp.prot.feature.accessibility.Reader import Reader as a11yreader
+    from pypropel.prot.feature.accessibility.Reader import Reader as a11yreader
 
     p = Assemble()
     # df_accpro = a11yreader().accpro(

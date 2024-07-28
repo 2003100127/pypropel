@@ -6,27 +6,26 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 from collections import Counter
-from pyprocpp.prot.sequence.Symbol import Symbol
+from pypropel.prot.sequence.Symbol import Symbol
+from pypropel.util.Console import Console
 
 
 class Composition:
     """
-    .. @methods:
-       ---------
-       get().
+    Amino acid composition for a sequence with its MSA is calculated.
 
-    .. @summary:
-       ---------
-       Amino acid composition for a sequence with its MSA is calculated.
-
-    .. @since:
-       -------
-       It was introduced since v1.0
     """
-    def __init__(self, sequence):
+    def __init__(
+            self,
+            sequence,
+            verbose: bool = True,
+    ):
         self.sequence = sequence
         self.symbol = Symbol()
         self.aa = self.symbol.single()
+
+        self.console = Console()
+        self.console.verbose = verbose
 
     def aac(self, ):
         aac_ = {}
@@ -36,20 +35,7 @@ class Composition:
 
     def dac(self, ):
         """
-        .. @summary:
-           ---------
-           It gets dipeptide composition (DPC).
-
-        .. @see:
-           -----
-           module - SingleFrequency
-
-        .. @since:
-           -------
-           It was introduced since v1.0
-
-        :return 2d list
-        :rtype list
+        dipeptide composition (DPC).
         """
         dac_ = []
         for _, i in enumerate(self.symbol.pair()):
@@ -85,7 +71,7 @@ class Composition:
             c.append(self.sequence[i] + self.sequence[i + k + 1])
         freq_dict = dict(Counter(c))
         cksnap_ = {}
-        print(freq_dict)
+        # print(freq_dict)
         keys = [*freq_dict.keys()]
         for _, i in enumerate(self.symbol.pair()):
             if i in keys:

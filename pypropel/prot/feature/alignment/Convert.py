@@ -6,8 +6,8 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 from Bio import AlignIO
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.util.Console import Console
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.util.Console import Console
 
 
 class Convert:
@@ -15,7 +15,8 @@ class Convert:
     def __init__(
             self,
             input_fpn,
-            output_fpn: str,
+            output_fpn: str = None,
+            output_fp : str = None,
             in_format='fasta',
             out_format: str = 'clustal',
             verbose: bool = True,
@@ -24,6 +25,7 @@ class Convert:
         self.output_fpn = output_fpn
         self.in_format = in_format
         self.out_format = out_format
+        self.output_fp = output_fp
 
         self.pfreader = pfreader()
         self.console = Console()
@@ -66,16 +68,19 @@ class Convert:
         )
         return 'Finished'
 
-    def tofasta_sgl(self, ):
+    def tofasta_sgl(
+            self,
+    ) -> str:
         f = open(self.input_fpn)
         msa = [[str(line) for line in f_parser.split()] for f_parser in f]
         ids = msa[::2]
         homologs = msa[1::2]
-        import os
-        output_fp = os.path.dirname(os.path.realpath(self.output_fpn))
+        # import os
+        # output_fp = os.path.dirname(os.path.realpath(self.output_fpn))
         for id, homolog in zip(ids, homologs):
-            with open(output_fp + '/' + id[0][1:] + '.fasta', 'w') as f_renew:
-                print(output_fp + id[0][1:] + '.fasta')
+            self.console.print("=========>extract {} to save".format(id[0][1:]))
+            with open(self.output_fp + '/' + id[0][1:] + '.fasta', 'w') as f_renew:
+                # print(self.output_fp + id[0][1:] + '.fasta')
                 f_renew.write(id[0] + '\n')
                 f_renew.write(homolog[0] + '\n')
         return 'Finished'
@@ -87,7 +92,7 @@ class Convert:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = Convert(
         input_fpn=to('data/msa/a2m/ET.a2m'),

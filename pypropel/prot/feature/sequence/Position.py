@@ -5,6 +5,8 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
+from typing import List
+
 import time
 import numpy as np
 
@@ -32,7 +34,7 @@ class Position:
         num_sort = 10
         one_hot_binary = np.zeros((num_sort, num_sort))
         one_hot_binary[np.arange(num_sort), np.flipud(np.arange(num_sort))] = 1
-        # print(one_hot_cls)
+        # print(one_hot_binary)
         encode_dict = {
             '24<=v<=28': one_hot_binary[0].tolist(),
             '29<=v<=33': one_hot_binary[1].tolist(),
@@ -44,31 +46,7 @@ class Position:
             '69<=v<=78': one_hot_binary[7].tolist(),
             '79<=v<=88': one_hot_binary[8].tolist(),
             'v>=89': one_hot_binary[9].tolist(),
-        }
-        return encode_dict
-
-    def metapsicov(self):
-        num_sort = 16
-        one_hot_binary = np.zeros((num_sort, num_sort))
-        one_hot_binary[np.arange(num_sort), np.flipud(np.arange(num_sort))] = 1
-        # print(one_hot_cls)
-        encode_dict = {
-            'v<5': one_hot_binary[0].tolist(),
-            'v=5': one_hot_binary[1].tolist(),
-            'v=6': one_hot_binary[2].tolist(),
-            'v=7': one_hot_binary[3].tolist(),
-            'v=8': one_hot_binary[4].tolist(),
-            'v=9': one_hot_binary[5].tolist(),
-            'v=10': one_hot_binary[6].tolist(),
-            'v=11': one_hot_binary[7].tolist(),
-            'v=12': one_hot_binary[8].tolist(),
-            'v=13': one_hot_binary[9].tolist(),
-            '14<=v<18': one_hot_binary[10].tolist(),
-            '18<=v<23': one_hot_binary[11].tolist(),
-            '23<=v<28': one_hot_binary[12].tolist(),
-            '28<=v<38': one_hot_binary[13].tolist(),
-            '38<=v<48': one_hot_binary[14].tolist(),
-            'v>=48': one_hot_binary[15].tolist(),
+            'none': [0] * num_sort
         }
         return encode_dict
 
@@ -80,7 +58,9 @@ class Position:
         for i, aa_win_ids in enumerate(window_aa_ids):
             res1 = aa_win_ids[0][0]
             res2 = aa_win_ids[1][0]
-            if 24 <= abs(res1 - res2) <= 28:
+            if res1 == None or res2 == None:
+                list_2d_[i] = list_2d_[i] + encode_dict['none']
+            elif 24 <= abs(res1 - res2) <= 28:
                 list_2d_[i] = list_2d_[i] + encode_dict['24<=v<=28']
             elif 29 <= abs(res1 - res2) <= 33:
                 list_2d_[i] = list_2d_[i] + encode_dict['29<=v<=33']
@@ -104,6 +84,32 @@ class Position:
         print('------> absolute position: {time}s.'.format(time=end_time - start_time))
         return list_2d_
 
+    def metapsicov(self):
+        num_sort = 16
+        one_hot_binary = np.zeros((num_sort, num_sort))
+        one_hot_binary[np.arange(num_sort), np.flipud(np.arange(num_sort))] = 1
+        # print(one_hot_cls)
+        encode_dict = {
+            'v<5': one_hot_binary[0].tolist(),
+            'v=5': one_hot_binary[1].tolist(),
+            'v=6': one_hot_binary[2].tolist(),
+            'v=7': one_hot_binary[3].tolist(),
+            'v=8': one_hot_binary[4].tolist(),
+            'v=9': one_hot_binary[5].tolist(),
+            'v=10': one_hot_binary[6].tolist(),
+            'v=11': one_hot_binary[7].tolist(),
+            'v=12': one_hot_binary[8].tolist(),
+            'v=13': one_hot_binary[9].tolist(),
+            '14<=v<18': one_hot_binary[10].tolist(),
+            '18<=v<23': one_hot_binary[11].tolist(),
+            '23<=v<28': one_hot_binary[12].tolist(),
+            '28<=v<38': one_hot_binary[13].tolist(),
+            '38<=v<48': one_hot_binary[14].tolist(),
+            'v>=48': one_hot_binary[15].tolist(),
+            'none': [0] * num_sort
+        }
+        return encode_dict
+
     def metapsicov_(self, list_2d, window_aa_ids):
         start_time = time.time()
         list_2d_ = list_2d
@@ -112,7 +118,9 @@ class Position:
         for i, aa_win_ids in enumerate(window_aa_ids):
             res1 = aa_win_ids[0][0]
             res2 = aa_win_ids[1][0]
-            if abs(res1 - res2) < 5:
+            if res1 == None or res2 == None:
+                list_2d_[i] = list_2d_[i] + encode_dict['none']
+            elif abs(res1 - res2) < 5:
                 list_2d_[i] = list_2d_[i] + encode_dict['v<5']
             elif abs(res1 - res2) == 5:
                 list_2d_[i] = list_2d_[i] + encode_dict['v=5']
@@ -148,54 +156,70 @@ class Position:
         print('------> metapsicov one-hot position: {time}s.'.format(time=end_time - start_time))
         return list_2d_
 
-    def relativeS2(self, order, interval):
-        return max(order - min(interval)) / (max(interval) - min(interval))
+    def relative(
+            self,
+            pos,
+            interval : List,
+    ):
+        """
+        Notes
+        -----
+            One application scenario is to calculate the position of a residue
+            relative to the boundary of a transmembrane segment (interval).
+        """
+        return abs(pos - min(interval)) / (max(interval) - min(interval))
 
-    def absolute(self, pos, seq):
-        return round(pos / len(seq), 10)
+    def absolute(self, pos, seq, decimal_place=10):
+        return round(pos / len(seq), decimal_place)
 
 
 if __name__ == "__main__":
-    from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
-    from pyprocpp.path import to
-    import tmkit as tmk
+    from pypropel.prot.sequence.Fasta import Fasta as sfasta
+    from pypropel.path import to
 
+    import tmkit as tmk
     sequence = sfasta().get(
         fasta_fpn=to("data/fasta/1aigL.fasta")
     )
-    print(sequence)
+    # print(sequence)
 
-    pos_list = tmk.seq.pos_list_pair(len_seq=len(sequence), seq_sep_superior=None, seq_sep_inferior=0)
+    pos_list = tmk.seq.pos_list_pair(
+        len_seq=len(sequence),
+        seq_sep_superior=None,
+        seq_sep_inferior=0,
+    )
     # print(pos_list)
 
     positions = tmk.seq.pos_pair(sequence=sequence, pos_list=pos_list)
-    # print(positions)
+    # print(positions[:3])
 
-    window_size = 0
+    window_size = 1
     win_aa_ids = tmk.seq.win_id_pair(
         sequence=sequence,
         position=positions,
         window_size=window_size,
     )
-    print(win_aa_ids)
+    # print(win_aa_ids)
 
-    # win_aas = tmk.seq.win_name_pair(
-    #     sequence=sequence,
-    #     position=positions,
-    #     window_size=window_size,
-    #     mids=win_aa_ids,
-    # )
-    # print(win_aas)
+    win_aas = tmk.seq.win_name_pair(
+        sequence=sequence,
+        position=positions,
+        window_size=window_size,
+        mids=win_aa_ids,
+    )
+    # print(win_aas[:3])
 
     features = [[] for i in range(len(win_aa_ids))]
+    # print(features)
+    # print(len(features))
 
     p = Position()
-
+    print(positions[0][0])
     print(p.absolute(positions[0][0], sequence))
 
-    # print(p.deepconpred())
+    print(p.deepconpred())
 
-    # print(p.deepconpred_(features, win_aa_ids))
+    print(p.deepconpred_(features, win_aa_ids))
 
     # print(p.metapsicov())
 

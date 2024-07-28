@@ -5,10 +5,10 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-from pyprocpp.prot.sequence.PDB import PDB
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.prot.sequence.PDB import PDB
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class toFasta:
@@ -58,7 +58,7 @@ class toFasta:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     import pandas as pd
 

@@ -7,10 +7,10 @@ __maintainer__ = "Jianfeng Sun"
 
 import os
 import subprocess
-from pyprocpp.util.FileIO import FileIO
+from pypropel.util.FileIO import FileIO
 
 
-class Controller:
+class JSD:
 
     def __init__(
             self,
@@ -109,8 +109,8 @@ class Controller:
 
 
 if __name__ == "__main__":
-    from pyprocpp.util.Reader import Reader as pfreader
-    from pyprocpp.path import to
+    from pypropel.util.Reader import Reader as pfreader
+    from pypropel.path import to
 
     # SR24_AtoI SR24_CtoU
     df = pfreader().generic(df_fpn=to('data/msa/clustal/wild/SR24_AtoI/prot.txt'))
@@ -144,7 +144,7 @@ if __name__ == "__main__":
             param_config['sv_fp'], value_config['sv_fp'] + prot + '.jsd',
             param_config['clustal_fp'], value_config['clustal_fp'] + prot + '.clustal',
         ]
-        p = Controller(
+        p = JSD(
             order_list=order_list,
             job_fp='/ceph/project/cribbslab/shared/proj048/sun/pdbtm/jobs/',
             job_fn=str(key),

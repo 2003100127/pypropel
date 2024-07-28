@@ -5,7 +5,7 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 
 from rdkit import Chem
-from pyprocpp.util.Console import Console
+from pypropel.util.Console import Console
 
 
 class SDF:
@@ -99,7 +99,7 @@ class SDF:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = SDF(sdf_fpn=to('data/chem/approved.sdf'))
     # p.kind = 'expt_dict' # expt approved all

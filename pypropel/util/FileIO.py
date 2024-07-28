@@ -9,9 +9,9 @@ import os
 import re
 import shutil
 import pandas as pd
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class FileIO:

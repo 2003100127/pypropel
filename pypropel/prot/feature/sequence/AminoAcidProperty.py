@@ -6,7 +6,7 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 import time
-from pyprocpp.util.normalization.Standardize import Standardize
+from pypropel.util.normalization.Standardize import Standardize
 
 
 class AminoAcidProperty:

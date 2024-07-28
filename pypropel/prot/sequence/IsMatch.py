@@ -5,12 +5,12 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-from pyprocpp.prot.sequence.Fasta import Fasta
-from pyprocpp.prot.sequence.PDB import PDB
-from pyprocpp.prot.sequence.XML import XML
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Console import Console
+from pypropel.prot.sequence.Fasta import Fasta
+from pypropel.prot.sequence.PDB import PDB
+from pypropel.prot.sequence.XML import XML
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Console import Console
 
 
 class IsMatch:
@@ -97,12 +97,12 @@ class IsMatch:
                     else:
                         self.console.print('============>They do not match.')
                         mismatch.append([prot_name, prot_chain])
-        self.pfwriter.generic(mismatch, self.sv_mismatch_fp + 'mismatch.txt')
+        self.pfwriter.generic(mismatch, self.sv_mismatch_fp + 'is_match_table.txt')
         return 'Finished'
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     import pandas as pd
     prot_df = pd.DataFrame({

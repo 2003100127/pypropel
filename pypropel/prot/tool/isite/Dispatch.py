@@ -7,13 +7,13 @@ __maintainer__ = "Jianfeng Sun"
 
 import json
 import pandas as pd
-from pyprocpp.prot.tool.isite.Segment import Segment as sprecision
-from pyprocpp.prot.structure.distance.isite.Label import Label as dlabel
-from pyprocpp.prot.feature.Length import Length as fealength
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.prot.tool.isite.Segment import Segment as sprecision
+from pypropel.prot.structure.distance.isite.Label import Label as dlabel
+from pypropel.prot.feature.sequence.Length import Length as fealength
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class Dispatcher:
@@ -390,7 +390,7 @@ class Dispatcher:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = Dispatcher()
 

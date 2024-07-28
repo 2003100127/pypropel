@@ -8,8 +8,8 @@ __maintainer__ = "Jianfeng Sun"
 import re
 import pandas as pd
 from Bio import SeqIO
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.util.Console import Console
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.util.Console import Console
 
 
 class ConvertM2S:
@@ -42,11 +42,13 @@ class ConvertM2S:
         })
         self.df = self.drugbank_target_ids()
         self.df = self.drugbank_drug_ids()
-        print(self.df)
 
         self.pfreader = pfreader()
         self.console = Console()
         self.console.verbose = verbose
+
+        self.console.print("=========>content of the dataframe:\n {}".format(self.df.columns))
+        self.console.print("=========>target IDs:\n {}".format(self.df.target_ids))
 
     def read(self, ):
         return SeqIO.parse(handle=self.input_fpn, format=self.in_format)
@@ -61,17 +63,20 @@ class ConvertM2S:
         return self.df
 
     def tofasta(self, ):
+        self.console.print("=========>start to split into single fasta files".format(self.df.shape))
+        self.console.print("=========># of proteins: {}".format(self.df.shape[0]))
         self.df = self.df.drop_duplicates(subset=['target_ids'], keep="first")
+        self.console.print("=========># of proteins after deduplication: {}".format(self.df.shape[0]))
         for i in self.df.index:
             f = open(self.sv_fp + self.df.loc[i, 'target_ids'] + '.fasta', 'w')
             f.write('>' + self.df.loc[i, 'target_ids'] + '\n')
             f.write(str(self.df.loc[i, 'fasta_seqs']))
             f.close()
-        return
+        return self.df
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = ConvertM2S(
         input_fpn=to('data/msa/experimental_protein.fasta'),
@@ -80,6 +85,8 @@ if __name__ == "__main__":
     )
 
     print(p.tofasta())
+    # print(p.df.target_ids)
+    # print(p.df.drug_ids)
 
     # from collections import Counter
     # print(Counter(p.drugbank_target_ids()))

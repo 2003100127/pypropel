@@ -10,9 +10,9 @@ import json
 import functools
 import numpy as np
 import pandas as pd
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Evaluate import Evaluate as mlgauge
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Evaluate import Evaluate as mlgauge
 
 
 class MetricFormatter:
@@ -135,7 +135,7 @@ class MetricFormatter:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = MetricFormatter()
     # print(p.roc(

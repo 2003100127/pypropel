@@ -6,7 +6,7 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 import matplotlib.pyplot as plt
-from pyprocpp.prot.feature.BasicUnit import BasicUnit
+from pypropel.prot.feature.BasicUnit import BasicUnit
 
 import numpy as np
 
@@ -336,7 +336,7 @@ class jsdconservation:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = jsdconservation()
     masp_fpns = {

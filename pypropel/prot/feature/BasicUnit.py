@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 import re
 import pandas as pd
-from pyprocpp.prot.feature.alignment.Conservation import Conservation as conser
+from pypropel.prot.feature.alignment.Conservation import Conservation as conser
 
 
 class BasicUnit:

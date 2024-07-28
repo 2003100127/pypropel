@@ -6,10 +6,10 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 from Bio import PDB
-from pyprocpp.prot.structure.chain.Select import Select
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.prot.structure.chain.Select import Select
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class Splitter:
@@ -109,7 +109,7 @@ class Splitter:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     import pandas as pd
 

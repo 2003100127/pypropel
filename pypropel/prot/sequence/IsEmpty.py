@@ -5,10 +5,10 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-from pyprocpp.prot.sequence.Fasta import Fasta
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.prot.sequence.Fasta import Fasta
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class IsEmpty:
@@ -17,9 +17,11 @@ class IsEmpty:
             self,
             prot_df,
             sv_empty_fp,
+            fasta_fp,
             verbose: bool = True,
     ):
         self.prot_df = prot_df
+        self.fasta_fp = fasta_fp
         self.sv_empty_fp = sv_empty_fp
         self.pfwriter = pfwriter()
         self.console = Console()
@@ -27,8 +29,7 @@ class IsEmpty:
 
     def fasta(
             self,
-            fasta_path,
-    ):
+    ) -> str:
         empty = []
         for i in range(self.prot_df.shape[0]):
             prot_name = self.prot_df['prot'][i]
@@ -36,7 +37,7 @@ class IsEmpty:
             file_chain = chainname().chain(prot_chain)
             self.console.print('============>No{}. protein {} chain {}'.format(i, prot_name, prot_chain))
             try:
-                if Fasta().get(fasta_fpn=fasta_path + prot_name + file_chain + '.fasta') == '':
+                if Fasta().get(fasta_fpn=self.fasta_fp + prot_name + file_chain + '.fasta') == '':
                     self.console.print('===============>The fasta file is empty.')
                     empty.append([prot_name, prot_chain])
             except FileNotFoundError:
@@ -45,12 +46,12 @@ class IsEmpty:
             except:
                 self.console.print('============>Other errors...')
                 continue
-        self.pfwriter.generic(empty, self.sv_empty_fp + 'empty.txt')
+        self.pfwriter.generic(empty, self.sv_empty_fp + 'is_empty_table.txt')
         return 'Finished'
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     import pandas as pd
 
@@ -61,9 +62,7 @@ if __name__ == "__main__":
 
     p = IsEmpty(
         prot_df=prot_df,
+        fasta_fp=to('data/fasta/'),
         sv_empty_fp=to('data/'),
     )
-
-    print(p.fasta(
-        fasta_path=to('data/fasta/'),
-    ))
+    print(p.fasta())

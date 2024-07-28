@@ -43,8 +43,8 @@ class plmc:
 
 
 if __name__ == "__main__":
-    from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
-    from pyprocpp.path import to
+    from pypropel.prot.sequence.Fasta import Fasta as sfasta
+    from pypropel.path import to
     import tmkit as tmk
 
     sequence = sfasta().get(

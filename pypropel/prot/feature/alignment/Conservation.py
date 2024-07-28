@@ -8,27 +8,25 @@ __maintainer__ = "Jianfeng Sun"
 import re
 import numpy as np
 import pandas as pd
-from pyprocpp.util.Reader import Reader as pfreader
+from pypropel.util.Reader import Reader as pfreader
 
 
 class Conservation:
     
-    def __init__(self, msa=None, thres=20):
-        self.msa = msa
-        self.thres = thres
+    def __init__(self, ):
         self.pfreader = pfreader()
 
-    def get(self, ent_dict):
+    def get(self, ent_dict, thres=20):
         conser = {}
         for k, v in ent_dict.items():
-            conser[k] = 1 - (v / np.log(self.thres))
+            conser[k] = 1 - (v / np.log(thres))
         return conser
 
-    def getFromOutside(self, entropy):
+    def getFromOutside(self, entropy, thres=20):
         # entropy, _ = self.it.entropyMirror(gap_thres=0.5)
         conser = {}
         for k, v in entropy.items():
-            conser[k] = 1 - (v / np.log(self.thres))
+            conser[k] = 1 - (v / np.log(thres))
         return conser
 
     def jsd(self, jsd_fpn):
@@ -75,7 +73,13 @@ class Conservation:
         df['score'] = df['score'].apply(lambda x: 0 if x == -1000.0 else x)
         return df
 
-    def consurf(self, consurf_fpn):
+    def consurf_v1(
+            self,
+            consurf_fpn : str,
+    ):
+        """
+        v1 means the output adopted by ConSurf before 2024.
+        """
         f = open(consurf_fpn, 'r')
         c = []
         for line in f.readlines():
@@ -84,21 +88,29 @@ class Conservation:
                 c.append([i.strip() for i in line])
         f.close()
         l = pd.DataFrame(c)
-        # print(l)
+        print(l)
         l[0] = l[0].astype(np.int64)
         l[2] = l[2].astype(np.float64)
         l[2] = l[2]
         l = l[[0, 1, 2, 4, 11, 12]]
+        l = l.rename(columns={
+            0: 'position',
+            1: 'amino acid',
+            2: 'score',
+            4: 'color',
+            11: 'exposed/buried',
+            12: 'structral/functional',
+        })
         return l
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = Conservation()
 
-    # print(p.jsd(jsd_fpn=to('data/jsd/SR24_CtoU/CLEC2B_LOC113845378.jsd')))
+    print(p.jsd(jsd_fpn=to('data/conservation/jsd/SR24_CtoU/CLEC2B_LOC113845378.jsd')))
 
-    print(p.consurf(
-        to('data/conservation/consurf/E.consurf')
-    ))
+    # print(p.consurf_v1(
+    #     to('data/conservation/consurf/E.consurf')
+    # ))

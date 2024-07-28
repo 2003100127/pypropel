@@ -9,7 +9,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.getcwd()) + '/')
 from Bio.PDB.PDBParser import PDBParser
-from pyprocpp.prot.structure.distance import Distance
+from pypropel.prot.structure.distance import Distance
 
 
 class AllAgainstAll(Distance.distance):
@@ -43,7 +43,7 @@ class AllAgainstAll(Distance.distance):
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = AllAgainstAll(
         pdb_fp=to('data/pdb/complex/'),

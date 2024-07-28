@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 import os
 import subprocess
-from pyprocpp.util.FileIO import FileIO
+from pypropel.util.FileIO import FileIO
 
 class TransmitterComplex:
 
@@ -106,8 +106,8 @@ class TransmitterComplex:
 
 
 if __name__ == "__main__":
-    from pyprocpp.util.Reader import Reader as pfreader
-    from pyprocpp.path import to
+    from pypropel.util.Reader import Reader as pfreader
+    from pypropel.path import to
 
     df = pfreader().generic(df_fpn=to('data/ex/final.txt'), header=0)
     # prots = df.prot.unique()[:2000]
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     }
     value_config = {
         'tool_fp': '/home/j/jsun/miniconda3/envs/scflow/bin/python',
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'script_fpn': '/home/j/jsun/store/software/pyprocpp/pyprocpp/prot/structure/distance/ppi/template/Complex.py',
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'script_fpn': '/home/j/jsun/store/software/pypropel/pypropel/prot/structure/distance/ppi/template/Complex.py',
         'pdb_fp': '/project/cribbslab/shared/proj048/sun/pdbtm/',
         'sv_fp': '/project/cribbslab/shared/proj048/sun/check/',
     }

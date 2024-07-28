@@ -125,9 +125,9 @@ class Binning:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
-    from pyprocpp.util.Reader import Reader as pfreader
-    from pyprocpp.util.Writer import Writer as pfwriter
+    from pypropel.path import to
+    from pypropel.util.Reader import Reader as pfreader
+    from pypropel.util.Writer import Writer as pfwriter
 
     df = pfreader().generic(to('data/binning/ex.txt'), header=0)
     print(df)

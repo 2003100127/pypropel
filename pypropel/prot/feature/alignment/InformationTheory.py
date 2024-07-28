@@ -8,8 +8,8 @@ __maintainer__ = "Jianfeng Sun"
 import time
 import numpy as np
 import pandas as pd
-from pyprocpp.prot.feature.alignment.frequency.Single import Single
-from pyprocpp.prot.feature.alignment.frequency.Pair import Pair
+from pypropel.prot.feature.alignment.frequency.Single import Single
+from pypropel.prot.feature.alignment.frequency.Pair import Pair
 
 
 class InformationTheory:

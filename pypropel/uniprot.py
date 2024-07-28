@@ -6,7 +6,7 @@ __maintainer__ = "Jianfeng Sun"
 __email__="jianfeng.sunmt@gmail.com"
 
 import pandas as pd
-from pyprocpp.prot.uniprot.Text import Text as uniprottext
+from pypropel.prot.uniprot.Text import Text as uniprottext
 
 
 def from_text(
@@ -22,7 +22,7 @@ def from_text(
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     print(from_text(
         text_fpn=to('data/uniprot/text/uniprotkb_Human_AND_reviewed_true_AND_m_2023_11_29.txt'),

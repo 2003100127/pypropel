@@ -8,9 +8,9 @@ __maintainer__ = "Jianfeng Sun"
 import os
 import sys
 sys.path.append(os.path.dirname(os.getcwd()) + '/')
-from pyprocpp.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class Complex:
@@ -38,7 +38,7 @@ class Complex:
 
         Examples
         --------
-        pyprocpp\pyprocpp>
+        pypropel\pypropel>
 
         python ./prot/structure/distance/isite/check/Complex.py -fp ./data/pdb/complex/pdbtm/ -fn 1aij -op ./data/pdb/complex/pdbtm/
 
@@ -94,7 +94,7 @@ if __name__ == "__main__":
         if args.sv_fp:
             sv_fp = args.sv_fp
     else:
-        from pyprocpp.path import to
+        from pypropel.path import to
 
         pdb_fp = to('data/pdb/complex/pdbtm/')
         prot_name = '1aij'

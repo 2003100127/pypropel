@@ -1,4 +1,4 @@
-from pyprocpp.util.Reader import Reader as pfreader
+from pypropel.util.Reader import Reader as pfreader
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -67,7 +67,7 @@ class Variant:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = Variant()
     print(p.mutpred2(

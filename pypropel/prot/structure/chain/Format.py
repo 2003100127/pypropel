@@ -5,9 +5,9 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Console import Console
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Console import Console
 
 
 class Format:
@@ -62,7 +62,7 @@ class Format:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     import pandas as pd
 
@@ -70,7 +70,7 @@ if __name__ == "__main__":
         'prot': ['1aig', '1aij', '1xqf'],
         'chain': ['L', 'L', 'A'],
     })
-    from pyprocpp.util.FileIO import FileIO
+    from pypropel.util.FileIO import FileIO
 
     p = Format(
         prot_df=prot_df,

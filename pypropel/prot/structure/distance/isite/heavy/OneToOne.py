@@ -6,7 +6,7 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 from Bio.PDB.PDBParser import PDBParser
-from pyprocpp.prot.structure.distance import Distance
+from pypropel.prot.structure.distance import Distance
 
 
 class OneToOne(Distance.distance):
@@ -40,7 +40,7 @@ class OneToOne(Distance.distance):
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = OneToOne(
         pdb_path1=to('data/pdb/complex/'),

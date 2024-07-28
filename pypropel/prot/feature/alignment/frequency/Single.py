@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 import numpy as np
 import pandas as pd
-from pyprocpp.prot.sequence.Symbol import Symbol
+from pypropel.prot.sequence.Symbol import Symbol
 
 
 class Single:

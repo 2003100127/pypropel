@@ -9,10 +9,10 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.getcwd()) + '/')
 import pandas as pd
-from pyprocpp.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Console import Console
+from pypropel.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Console import Console
 
 
 class Run:
@@ -176,7 +176,7 @@ if __name__ == "__main__":
         if args.sv_fp:
             sv_fp = args.sv_fp
     else:
-        from pyprocpp.path import to
+        from pypropel.path import to
 
         pdb_fp = to('data/pdb/complex/pdbtm/')
         prot_name = '1aij'

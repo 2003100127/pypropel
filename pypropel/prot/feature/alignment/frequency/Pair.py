@@ -7,9 +7,9 @@ __maintainer__ = "Jianfeng Sun"
 
 import numpy as np
 from collections import Counter
-from pyprocpp.prot.feature.alignment.symbol.Pair import Pair as pairalignsymbol
-from pyprocpp.prot.sequence.Symbol import Symbol
-from pyprocpp.util.ComputLib import ComputLib
+from pypropel.prot.feature.alignment.symbol.Pair import Pair as pairalignsymbol
+from pypropel.prot.sequence.Symbol import Symbol
+from pypropel.util.ComputLib import ComputLib
 
 
 class Pair:

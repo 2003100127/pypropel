@@ -5,10 +5,10 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Console import Console
+from pypropel.prot.sequence.Fasta import Fasta as sfasta
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Console import Console
 
 
 class ConvertS2M:
@@ -61,7 +61,7 @@ class ConvertS2M:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
     import pandas as pd
 
     p = ConvertS2M(

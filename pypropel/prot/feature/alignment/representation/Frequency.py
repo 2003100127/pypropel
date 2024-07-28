@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 import numpy as np
 from collections import Counter
-from pyprocpp.prot.feature.alignment.symbol.Single import Single as sglalignsymbol
+from pypropel.prot.feature.alignment.symbol.Single import Single as sglalignsymbol
 
 
 class Frequency:

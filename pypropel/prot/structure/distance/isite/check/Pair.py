@@ -10,10 +10,10 @@ import sys
 print(os.path.dirname(os.getcwd()) + '/')
 sys.path.append(os.path.dirname(os.getcwd()) + '/')
 from Bio.PDB.PDBParser import PDBParser
-from pyprocpp.prot.structure.distance import Distance
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.prot.structure.distance import Distance
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class Pair(Distance.distance):
@@ -63,7 +63,7 @@ class Pair(Distance.distance):
 
         Examples
         --------
-        ./pyprocpp/pyprocpp>
+        ./pypropel/pypropel>
 
         python ./prot/structure/distance/isite/check/Pair.py -fp1 ./data\pdb\pdbtm/ -fp2 ./data\pdb\pdbtm/ -fn1 1aij -fn2 1aij -c1 L -c2 M -t 6.0 -op ./data\pdb\pdbtm/
 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
             sv_fp = args.op
 
     else:
-        from pyprocpp.path import to
+        from pypropel.path import to
 
         pdb_fp1 = to('data/pdb/pdbtm/')
         pdb_fp2 = to('data/pdb/pdbtm/')

@@ -6,8 +6,8 @@ __email__ = "jianfeng.sunmt@gmail.com"
 
 import pandas as pd
 from rdkit import DataStructs
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.Console import Console
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.Console import Console
 
 
 class Similarity:
@@ -61,9 +61,9 @@ class Similarity:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
-    from pyprocpp.chem.SDF import SDF
-    from pyprocpp.chem.Fingerprint import Fingerprint
+    from pypropel.path import to
+    from pypropel.chem.SDF import SDF
+    from pypropel.chem.Fingerprint import Fingerprint
 
     p1 = Similarity()
     p2 = Fingerprint()

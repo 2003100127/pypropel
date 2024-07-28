@@ -7,8 +7,8 @@ __maintainer__ = "Jianfeng Sun"
 
 import time
 import numpy as np
-from pyprocpp.util.normalization.Standardize import Standardize
-from pyprocpp.util.Console import Console
+from pypropel.util.normalization.Standardize import Standardize
+from pypropel.util.Console import Console
 
 
 class Assemble:
@@ -138,8 +138,8 @@ class Assemble:
 
 
 if __name__ == "__main__":
-    from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
-    from pyprocpp.path import to
+    from pypropel.prot.sequence.Fasta import Fasta as sfasta
+    from pypropel.path import to
     import tmkit as tmk
 
     sequence = sfasta().get(
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     features_1d_in = [[] for i in range(len(sequence))]
     features_2d_in = positions
 
-    from pyprocpp.prot.feature.ss.Reader import Reader as ssreader
+    from pypropel.prot.feature.ss.Reader import Reader as ssreader
 
     p = Assemble()
     df_spider3 = ssreader().spider3(

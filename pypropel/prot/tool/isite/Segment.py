@@ -7,9 +7,9 @@ __maintainer__ = "Jianfeng Sun"
 
 import numpy as np
 import pandas as pd
-from pyprocpp.prot.tool.isite.Reader import Reader as isitereader
-from pyprocpp.util.Evaluate import Evaluate as mlgauge
-from pyprocpp.util.Console import Console
+from pypropel.prot.tool.isite.Reader import Reader as isitereader
+from pypropel.util.Evaluate import Evaluate as mlgauge
+from pypropel.util.Console import Console
 
 
 class Segment():
@@ -351,12 +351,12 @@ class Segment():
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
-    from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
+    from pypropel.path import to
+    from pypropel.prot.sequence.Fasta import Fasta as sfasta
     import tmkit as tmk
     from tmkit.seqnetrr.combo.Length import length as lscenario
     from tmkit.position.scenario.Segment import Segment as sscenario
-    from pyprocpp.prot.structure.distance.isite.Label import Label as dlabel
+    from pypropel.prot.structure.distance.isite.Label import Label as dlabel
 
     INIT = {
         'delphi_path': to('data/predictor/ppi/delphi/tm_alpha_n30/'),

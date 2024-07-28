@@ -6,8 +6,9 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 import numpy as np
-from pyprocpp.prot.feature.alignment.frequency.Single import Single as fs
+from pypropel.prot.feature.alignment.frequency.Single import Single as fs
 # from protein.tool.alignment.Reader import reader as pareader
+from pypropel.util.Console import Console
 
 
 class Composition:
@@ -15,6 +16,7 @@ class Composition:
     def __init__(
             self,
             msa,
+            verbose: bool = True,
     ):
         """
         Amino acid composition for a sequence with its MSA is calculated.
@@ -26,6 +28,9 @@ class Composition:
         self.msa = msa
         # self.pareader = pareader()
         self.fs = fs(self.msa)
+
+        self.console = Console()
+        self.console.verbose = verbose
 
     def aac(self, ):
         """
@@ -87,20 +92,23 @@ class Composition:
         return fraction
 
 
+
+
 if __name__ == "__main__":
-    from pyprocpp.prot.feature.alignment.MSA import MSA as msaparser
-    from pyprocpp.path import to
+    from pypropel.prot.feature.alignment.MSA import MSA as msaparser
+    from pypropel.path import to
 
     msa = msaparser(
-        msa_fpn=to('data/msa/aln/1aijL.aln')
+        msa_fpn=to('data/msa/aln/1aijL.aln'),
     ).read()
 
     p = Composition(
-        msa=msa
+        msa=msa,
     )
 
-    print(p.aac())
+    # print(p.aac())
 
     # print(p.evolutionary_profile())
 
-    print(p.evolutionary_profile_norm())
+    # print(len(p.evolutionary_profile_norm()['A']))
+

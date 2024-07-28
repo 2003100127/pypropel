@@ -95,8 +95,8 @@ class Fingerprint:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
-    from pyprocpp.chem.SDF import SDF
+    from pypropel.path import to
+    from pypropel.chem.SDF import SDF
 
     p = Fingerprint()
     mp = SDF(sdf_fpn=to('data/chem/approved.sdf'))

@@ -8,8 +8,8 @@ __maintainer__ = "Jianfeng Sun"
 import json
 import numpy as np
 import pandas as pd
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.util.ComputLib import ComputLib as computlib
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.util.ComputLib import ComputLib as computlib
 
 
 class Text:
@@ -26,6 +26,7 @@ class Text:
         self.pfwriter = pfwriter()
 
     def parse(self, ) -> pd.DataFrame:
+
         f = open(self.text_fpn)
         cands = {}
         # print(f.readlines())
@@ -263,10 +264,10 @@ class Text:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
     p = Text(
         # text_fpn=to('data/uniprot/text/uniprot-human-filtered-organism.txt'),
-        text_fpn=to('data/uniprot/text/uniprotkb_Human_AND_reviewed_true_AND_m_2023_11_29.txt'),
+        text_fpn=to('data/uniprot/text/uniprotkb_Human_AND_reviewed_true_AND_m_2024_07_27.txt'),
         sv_json_fpn=to('data/uniprot/text/human.json'),
         sv_df_fpn=to('data/uniprot/text/human.txt'),
     )

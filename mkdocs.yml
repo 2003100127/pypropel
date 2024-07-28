@@ -27,7 +27,7 @@ theme:
   palette:
     # Palette toggle for light mode
 #    - accent: pink
-    - primary: purple
+    - primary: teal
     - scheme: default
       toggle:
         icon: material/brightness-7

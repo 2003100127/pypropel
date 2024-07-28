@@ -8,7 +8,7 @@ __maintainer__ = "Jianfeng Sun"
 import re
 import linecache
 import pandas as pd
-from pyprocpp.util.Reader import Reader as pfreader
+from pypropel.util.Reader import Reader as pfreader
 
 
 class Reader:
@@ -52,7 +52,7 @@ class Reader:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     p = Reader()
 

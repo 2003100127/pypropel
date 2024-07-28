@@ -297,8 +297,8 @@ def rename_file_prefix(
 
 
 if __name__ == "__main__":
-    from pyprocpp.util.Reader import Reader as pfreader
-    from pyprocpp.path import to
+    from pypropel.util.Reader import Reader as pfreader
+    from pypropel.path import to
 
     df = find_from_folder(
         file_path=to('data/ex/xml/'),
@@ -356,7 +356,7 @@ if __name__ == "__main__":
     # ))
     #
     # p = ListDiffer()
-    # from pyprocpp.path import to
+    # from pypropel.path import to
     #
     # # #/*** unipartite ***/
     # df_lg = pfreader().generic(to('../data/pdbtm_alpha_10.02.2023.txt'), df_sep='\t')

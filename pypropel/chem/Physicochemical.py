@@ -141,8 +141,8 @@ class Physicochemical:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
-    from pyprocpp.chem.SDF import SDF
+    from pypropel.path import to
+    from pypropel.chem.SDF import SDF
 
     p1 = Physicochemical()
     mp = SDF(sdf_fpn=to('data/chem/approved.sdf'))

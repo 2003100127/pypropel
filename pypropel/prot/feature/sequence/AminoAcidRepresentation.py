@@ -8,8 +8,8 @@ __maintainer__ = "Jianfeng Sun"
 from typing import  List
 
 import time
-from pyprocpp.prot.sequence.Symbol import Symbol
-from pyprocpp.util.Console import Console
+from pypropel.prot.sequence.Symbol import Symbol
+from pypropel.util.Console import Console
 
 
 class AminoAcidRepresentation:

@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 import seaborn as sns
 import matplotlib.pyplot as plt
-from pyprocpp.prot.plot.MetricFormatter import MetricFormatter
+from pypropel.prot.plot.MetricFormatter import MetricFormatter
 
 
 class ROCPR:
@@ -115,7 +115,7 @@ class ROCPR:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     X_fpns = {
         'tma300': to('data/eval/tma300/tma300_roc_fpr_custom.json'),

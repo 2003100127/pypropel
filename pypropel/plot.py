@@ -8,8 +8,8 @@ __maintainer__ = "Jianfeng Sun"
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from pyprocpp.prot.feature.alignment.Conservation import Conservation as conser
-from pyprocpp.prot.feature.isite.Reader import Reader as isitereader
+from pypropel.prot.feature.alignment.Conservation import Conservation as conser
+from pypropel.prot.feature.isite.Reader import Reader as isitereader
 
 sns.set(font="Helvetica")
 sns.set_style("ticks")
@@ -111,7 +111,7 @@ def isite(
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
+    from pypropel.path import to
 
     print(conservation(
         method='jsd',

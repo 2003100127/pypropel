@@ -7,11 +7,11 @@ __maintainer__ = "Jianfeng Sun"
 
 import numpy as np
 import pandas as pd
-from pyprocpp.util.Reader import Reader as pfreader
-from pyprocpp.util.Writer import Writer as pfwriter
-from pyprocpp.prot.sequence.Name import Name as chainname
-from pyprocpp.util.ComputLib import ComputLib as computlib
-from pyprocpp.util.Console import Console
+from pypropel.util.Reader import Reader as pfreader
+from pypropel.util.Writer import Writer as pfwriter
+from pypropel.prot.sequence.Name import Name as chainname
+from pypropel.util.ComputLib import ComputLib as computlib
+from pypropel.util.Console import Console
 
 
 class Reader:
@@ -405,12 +405,12 @@ class Reader:
 
 
 if __name__ == "__main__":
-    from pyprocpp.path import to
-    from pyprocpp.prot.sequence.Fasta import Fasta as sfasta
+    from pypropel.path import to
+    from pypropel.prot.sequence.Fasta import Fasta as sfasta
     import tmkit as tmk
     from tmkit.seqnetrr.combo.Length import length as lscenario
     from tmkit.position.scenario.Segment import Segment as sscenario
-    from pyprocpp.prot.structure.distance.isite.Label import Label as dlabel
+    from pypropel.prot.structure.distance.isite.Label import Label as dlabel
 
     INIT = {
         'delphi_path': to('data/predictor/ppi/delphi/tm_alpha_n30/'),
