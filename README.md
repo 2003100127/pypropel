@@ -1,7 +1,8 @@
-# pypropel-dev
+<h1 align="center">
+    <img src="https://github.com/2003100127/pypropel/blob/main/docs/img/pypropel-logo.png?raw=true" width="200" height="124">
+    <br>
+</h1>
 
-
-### functions:
 
 [![Anaconda-Server Badge](https://anaconda.org/jianfeng_sun/pypropel/badges/latest_release_date.svg)](https://anaconda.org/jianfeng_sun/pypropel)
 ![PyPI](https://img.shields.io/pypi/v/pypropel?logo=PyPI)
