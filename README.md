@@ -3,7 +3,6 @@
 
 ### functions:
 
-<<<<<<< HEAD
 [![Anaconda-Server Badge](https://anaconda.org/jianfeng_sun/pypropel/badges/latest_release_date.svg)](https://anaconda.org/jianfeng_sun/pypropel)
 ![PyPI](https://img.shields.io/pypi/v/pypropel?logo=PyPI)
 ![Docker Image Version (latest)](https://img.shields.io/docker/v/2003100127/pypropel)
@@ -23,22 +22,9 @@
 ![Anaconda](https://img.shields.io/badge/-Anaconda-000?&logo=Anaconda)
 ![PyPI](https://img.shields.io/badge/-PyPI-000?&logo=PyPI)
 
-###### tags: `n`
-=======
->>>>>>> parent of ffae0d4 (init)
-1. chemical compund
+###### tags: `protein` `preprocessing` `postprocessing`
 
-2. protein
 
-3. dna
-
-4. rna
-
-<<<<<<< HEAD
-preprocessing/postprocessing
-```yaml
-
-```
 ## Overview
 
 
@@ -97,7 +83,7 @@ import pypropel
 ## 📄 Citation
 ``` shell
 @article{pypropel,
-    title = {},
+    title = {PyPropel},
     author = {Jianfeng Sun},
     doi = {xxx},
     url = {https://github.com/2003100127/pypropel},
@@ -113,6 +99,3 @@ import pypropel
 [![Gmail Badge](https://img.shields.io/badge/-jianfeng.sunmt@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jianfeng.sunmt@gmail.com)](mailto:jianfeng.sunmt@gmail.com)
 [![Outlook Badge](https://img.shields.io/badge/jianfeng.sun@ndorms.ox.ac.uk--000?style=social&logo=microsoft-outlook&logoColor=0078d4&link=mailto:jianfeng.sun@ndorms.ox.ac.uk)](mailto:jianfeng.sun@ndorms.ox.ac.uk)
 <a href="https://twitter.com/Jianfeng_Sunny" ><img src="https://img.shields.io/twitter/follow/Jianfeng_Sunny.svg?style=social" /> </a>
-=======
-preprocessing/postprocessing
->>>>>>> parent of ffae0d4 (init)
