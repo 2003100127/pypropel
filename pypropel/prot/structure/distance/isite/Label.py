@@ -37,7 +37,7 @@ class Label:
     def attach(self, ):
         self.console.print('================>Labeling data...')
         start_time = time.time()
-        df_dist = self.pfreader.generic(self.dist_fpn)
+        df_dist = self.pfreader.generic(self.dist_fpn, header=0)
         # print(df_dist)
         dists = df_dist.iloc[:, 3:]
         dist_mins = dists.min(axis=1)
@@ -62,15 +62,6 @@ class Label:
             pos_df,
             by : str | float = 'interact_id',
     ):
-        """
-        ..  @description:
-            -------------
-
-        :param dist_df:
-        :param pos_df:
-        :param by:
-        :return:
-        """
         dist_df_ = dist_df[[
             'fasta_id',
             'aa',
@@ -107,7 +98,7 @@ class Label:
         chains = multimeric.chains()
         seq_chain = chainname().seqchain(self.file_chain)
         chains.remove(seq_chain)
-        dist_df = self.pfreader.generic(self.dist_fpn)
+        dist_df = self.pfreader.generic(self.dist_fpn, header=0)
         dists = dist_df.iloc[:, 3:]
         partners = []
         for i, col in enumerate(dists.columns):
@@ -123,15 +114,15 @@ if __name__ == "__main__":
         dist_fp=to('data/pdb/complex/pdbtm/'),
         prot_name='1aij',
         file_chain='L',
+        cutoff=6,
     )
-
     dists = p.attach()
-    print(dists)
-    print(dists.to_csv('./dists.txt'))
+    # print(dists)
+    # print(dists.to_csv(to('data/pdb/complex/pdbtm/dist_label.txt')))
 
-    partners = p.partner(
-        pdb_fp=to('data/pdb/complex/pdbtm/')
-    )
+    # partners = p.partner(
+    #     pdb_fp=to('data/pdb/complex/pdbtm/'),
+    # )
     # print(partners)
 
     import tmkit as tmk
@@ -179,4 +170,5 @@ if __name__ == "__main__":
         pos_df=pd.DataFrame(pos_list_single),
         by=0,
     )
-    print(df_seg.to_csv('./asdasd.txt'))
+    print(df_seg)
+    # print(df_seg.to_csv('./asdasd.txt'))

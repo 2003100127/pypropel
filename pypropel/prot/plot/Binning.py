@@ -15,6 +15,7 @@ class Binning:
 
     def __init__(self, df, key, num_bins, ax):
         self.df = df
+        self.key = key
         self.num_bins = num_bins + 1
         self.df['agent'] = self.df[key].apply(
             lambda x: x
@@ -67,9 +68,10 @@ class Binning:
     def draw(self, ):
         # dbs = []
         ips = []
-        for key, id_list in self.bin_ids.items():
+        for _, id_list in self.bin_ids.items():
             # dbs.append(self.df.loc[id_list, 'num_db'].values.mean())
-            ips.append(self.df.loc[id_list, 'num_ip'].values.mean())
+            # ips.append(self.df.loc[id_list, 'num_ip'].values.mean())
+            ips.append(self.df.loc[id_list, self.key].values.mean())
         todos = {
             # 'dbs': dbs,
             'ips': ips,
@@ -114,8 +116,9 @@ class Binning:
         )
         self.ax.set_xticks(np.arange(len(self.bin_ids.keys())))
         self.ax.set_xticklabels(x_, fontsize=7.3)
-        self.ax.set_xlabel('Bin (number of interaction sites)', fontsize=12)
-        self.ax.set_ylabel(labels[0], fontsize=11)
+        # self.ax.set_xlabel('Bin (number of interaction sites)', fontsize=12)
+        self.ax.set_xlabel('Bin', fontsize=12)
+        self.ax.set_ylabel(self.key, fontsize=11)
 
         self.ax.spines['right'].set_color('white')
         self.ax.spines['top'].set_color('white')

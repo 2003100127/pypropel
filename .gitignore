@@ -3,6 +3,10 @@ pypropel/data/
 pypropel/path.py
 pypropel/download.py
 pypropel/download2.py
+pypropel/chem
+pypropel/dna
+pypropel/rna
+pypropel/fcsdf.py
 
 __pycache__/
 *.py[cod]

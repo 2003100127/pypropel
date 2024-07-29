@@ -17,7 +17,7 @@ class Frequency:
         self.msa_col = len(self.msa[0])
         self.passingle = sglalignsymbol(self.msa)
 
-    def calcSingle(self, x):
+    def calc_sgl_col(self, x):
         bases = self.passingle.extract(x)
         # print(bases[1])
         num_total = len(bases)
@@ -36,15 +36,17 @@ class Frequency:
                         freq_single[j] = 0
         return freq_single
 
-    def matrix(self):
+    def matrix(self ):
         base_freq_matrix_T = []
         for i in range(self.msa_col):
-            base_freq_matrix_T.append(self.calcSingle(i))
+            base_freq_matrix_T.append(self.calc_sgl_col(i))
         base_freq_matrix = np.transpose(np.array(base_freq_matrix_T))
         return base_freq_matrix
 
 
 if __name__ == "__main__":
-    p = Frequency('data/msa/psicov_n150/1atzA.aln')
-    print(p.calcSingle(1))
+    p = Frequency(
+        msa=msa
+    )
+    # print(p.calc_sgl_col(1))
     print(p.matrix())

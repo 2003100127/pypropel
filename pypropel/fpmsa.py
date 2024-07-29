@@ -115,9 +115,9 @@ if __name__ == "__main__":
     msa = msaparser(msa_fpn=to('data/msa/aln/1aijL.aln')).read()
     # print(msa)
 
-    print(length(msa=msa))
+    # print(length(msa=msa))
 
-    # ent_dict = entropy(msa=msa)
+    ent_dict = entropy(msa=msa)
     # print(ent_dict)
 
     # ent_dict = entropy_gap(msa=msa, gap_thres=100)
@@ -129,10 +129,10 @@ if __name__ == "__main__":
 
     # print(mutual_information(msa=msa, i=1, j=2))
 
-    # print(composition(
-    #     msa=msa,
-    #     mode='aac',
-    # ))
+    print(composition(
+        msa=msa,
+        mode='aac',
+    ))
 
     # print(pssm(
     #     # fpn=to('data/pssm/1aigL.pssm'),

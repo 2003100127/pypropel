@@ -1,6 +1,4 @@
-## Amino acid 
-
-Read a protein sequence.
+We use 23 indicators to describe physicochemical properties of amino acids as shown in Table 1. You can use `pp.fpsite.property` to get access to them.
 
 :material-language-python: Python
 ``` py linenums="1"
@@ -19,6 +17,8 @@ print(scale)
 ```
 
 In fact, `property` can be any of 23 amino acid properties, including
+
+**Table 1**. amino acid properties
 
 | Property        | Kind         | Citation                  | Value     |
 |:----------------|:-------------|:--------------------------|-----------|
@@ -65,3 +65,5 @@ In fact, `property` can be any of 23 amino acid properties, including
 [^4]: ARGOS, P., RAO, J.K.M. and HARGRAVE, P.A. (1982), Structural Prediction of Membrane-Bound Proteins. European Journal of Biochemistry, 128: 565-575. https://doi.org/10.1111/j.1432-1033.1982.tb07002.x
 
 [^5]: R. Grantham ,Amino Acid Difference Formula to Help Explain Protein Evolution.Science185,862-864(1974).DOI:10.1126/science.185.4154.862
+
+

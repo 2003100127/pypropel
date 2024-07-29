@@ -11,7 +11,7 @@ from pypropel.util.Writer import Writer as pfwriter
 from pypropel.util.Console import Console
 
 
-class toFasta:
+class ToFasta:
     
     def __init__(
             self,
@@ -49,12 +49,13 @@ class toFasta:
                     f.write('>' + prot_name + prot_chain + '\n')
                     f.write(str(seq) + '\n')
                     f.close()
+                    self.console.print('===============>successfully converted')
             except:
                 fails.append([prot_name, prot_chain])
                 print('No such a file: {}'.format(prot_name + prot_chain))
                 continue
         self.pfwriter.generic(fails, self.sv_fp + 'fails_PDB2FASTA.txt')
-        return 0
+        return 'finished'
 
 
 if __name__ == "__main__":
@@ -67,7 +68,7 @@ if __name__ == "__main__":
         'chain': ['L', 'L', 'A'],
     })
 
-    p = toFasta(
+    p = ToFasta(
         prot_df,
         sv_fp=to('data/'),
     )

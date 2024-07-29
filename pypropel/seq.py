@@ -78,10 +78,10 @@ if __name__ == "__main__":
     #     sv_fp=to('data/fasta/'),
     # ))
 
-    prot_df = pd.DataFrame({
-        'prot': ['1aig', '1aij', '1xqf'],
-        'chain': ['L', 'L', 'A'],
-    })
+    # prot_df = pd.DataFrame({
+    #     'prot': ['1aig', '1aij', '1xqf'],
+    #     'chain': ['L', 'L', 'A'],
+    # })
 
     # print(is_empty(
     #     prot_df=prot_df,

@@ -10,17 +10,21 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from pypropel.prot.feature.alignment.Conservation import Conservation as conser
 from pypropel.prot.feature.isite.Reader import Reader as isitereader
+from pypropel.prot.plot.ROCPR import ROCPR
+from pypropel.prot.plot.Binning import Binning
+from pypropel.prot.plot.Variant import Variant
+
 
 sns.set(font="Helvetica")
 sns.set_style("ticks")
 
 def conservation(
-        method: str,
-        conser_fpns: dict,
-        s: float = 1.0,
-        alpha: float = 0.5,
-        cmap: str = 'CMRmap_r',
-        sv_fpn: str = "./conser.pdf",
+        method : str,
+        conser_fpns : dict,
+        s : float = 1.0,
+        alpha : float = 0.5,
+        cmap : str = 'CMRmap_r',
+        sv_fpn : str = "./conser.pdf",
 ):
     if method == 'jsd':
         conser_met = conser().jsd
@@ -110,29 +114,73 @@ def isite(
     return
 
 
+def rocpr(
+        X_fpns,
+        Y_fpns,
+        x_label,
+        y_label,
+        title,
+        ax,
+):
+    return ROCPR().draw(
+        X_fpns=X_fpns,
+        Y_fpns=Y_fpns,
+        x_label=x_label,
+        y_label=y_label,
+        title=title,
+        ax=ax,
+    )
+
+
+def binning(
+        df,
+        key,
+        num_bins,
+        ax,
+):
+    return Binning(
+        df=df,
+        key=key,
+        num_bins=num_bins,
+        ax=ax,
+    ).draw()
+
+
+def mutpred2(
+        fpn,
+        sheet_name,
+        title='',
+):
+    return Variant().mutpred2(
+        fpn=fpn,
+        sheet_name=sheet_name,
+        title=title,
+    )
+
+
 if __name__ == "__main__":
     from pypropel.path import to
 
-    print(conservation(
-        method='jsd',
-        conser_fpns={
-            'ATAD2_LOC113841329': to('data/jsd/SR24_AtoI/ATAD2_LOC113841329.jsd'),
-            'CAMK1G': to('data/jsd/SR24_AtoI/CAMK1G.jsd'),
-            'CYP2W1_LOC101804267': to('data/jsd/SR24_AtoI/CYP2W1_LOC101804267.jsd'),
-            'KIF27': to('data/jsd/SR24_AtoI/KIF27.jsd'),
-            'KIF27_LOC113841629': to('data/jsd/SR24_AtoI/KIF27_LOC113841629.jsd'),
-            'LOC119718710': to('data/jsd/SR24_AtoI/LOC119718710.jsd'),
-            'RBBP8NL': to('data/jsd/SR24_AtoI/RBBP8NL.jsd'),
-        },
-        # conser_fpns={
-        #     'CLEC2B_LOC113845378': to('data/jsd/SR24_CtoU/CLEC2B_LOC113845378.jsd'),
-        #     'KIF27_LOC113841629': to('data/jsd/SR24_CtoU/KIF27_LOC113841629.jsd'),
-        #     'LOC101804340': to('data/jsd/SR24_CtoU/LOC101804340.jsd'),
-        #     'ZDHHC20_LOC101792807': to('data/jsd/SR24_CtoU/ZDHHC20_LOC101792807.jsd'),
-        # },
-        cmap='CMRmap_r',
-        sv_fpn="./A2I_conser.pdf", # A2I_conser C2U_conser
-    ))
+    # print(conservation(
+    #     method='jsd',
+    #     conser_fpns={
+    #         'ATAD2_LOC113841329': to('data/conservation/jsd/SR24_AtoI/ATAD2_LOC113841329.jsd'),
+    #         'CAMK1G': to('data/conservation/jsd/SR24_AtoI/CAMK1G.jsd'),
+    #         'CYP2W1_LOC101804267': to('data/conservation/jsd/SR24_AtoI/CYP2W1_LOC101804267.jsd'),
+    #         'KIF27': to('data/conservation/jsd/SR24_AtoI/KIF27.jsd'),
+    #         'KIF27_LOC113841629': to('data/conservation/jsd/SR24_AtoI/KIF27_LOC113841629.jsd'),
+    #         'LOC119718710': to('data/conservation/jsd/SR24_AtoI/LOC119718710.jsd'),
+    #         'RBBP8NL': to('data/conservation/jsd/SR24_AtoI/RBBP8NL.jsd'),
+    #     },
+    #     # conser_fpns={
+    #     #     'CLEC2B_LOC113845378': to('data/conservation/jsd/SR24_CtoU/CLEC2B_LOC113845378.jsd'),
+    #     #     'KIF27_LOC113841629': to('data/conservation/jsd/SR24_CtoU/KIF27_LOC113841629.jsd'),
+    #     #     'LOC101804340': to('data/conservation/jsd/SR24_CtoU/LOC101804340.jsd'),
+    #     #     'ZDHHC20_LOC101792807': to('data/conservation/jsd/SR24_CtoU/ZDHHC20_LOC101792807.jsd'),
+    #     # },
+    #     cmap='CMRmap_r',
+    #     sv_fpn="./A2I_conser.pdf", # A2I_conser C2U_conser
+    # ))
 
     # print(isite(
     #     method='graphppis',
@@ -154,3 +202,73 @@ if __name__ == "__main__":
     #     cmap='coolwarm',
     #     sv_fpn="./A2I_ppi.pdf",  # A2I_ppi C2U_ppi
     # ))
+
+    ### ++++++++++++++++++++++++++++++++++++++++++++
+    # X_fpns = {
+    #     'tma300': to('data/eval/tma300/tma300_roc_fpr_custom.json'),
+    # }
+    # Y_fpns = {
+    #     'tma300': to('data/eval/tma300/tma300_roc_tpr_custom.json'),
+    # }
+    # fig, ax = plt.subplots(
+    #     nrows=2,
+    #     ncols=2,
+    #     # figsize=(6, 5),
+    #     figsize=(12, 10),
+    #     sharey='all',
+    #     sharex=False,
+    # )
+    # print(rocpr(
+    #     X_fpns,
+    #     Y_fpns,
+    #     x_label='fpr',
+    #     y_label='tpr',
+    #     title='',
+    #     ax=ax[0, 0],
+    # ))
+    # print(rocpr(
+    #     X_fpns,
+    #     Y_fpns,
+    #     x_label='fpr',
+    #     y_label='tpr',
+    #     title='',
+    #     ax=ax[0, 1],
+    # ))
+    # print(rocpr(
+    #     X_fpns,
+    #     Y_fpns,
+    #     x_label='fpr',
+    #     y_label='tpr',
+    #     title='',
+    #     ax=ax[1, 0],
+    # ))
+    # plt.show()
+
+
+    ### ++++++++++++++++++++++++++++++++++++++++++++
+    # from pypropel.util.Reader import Reader as pfreader
+    # df = pfreader().generic(to('data/binning/ex.txt'), header=0)
+    # print(df)
+    #
+    # fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(6, 4), sharey=False, sharex='all')
+    # binning(
+    #     df=df,
+    #     key='num_db',
+    #     num_bins=10,
+    #     ax=axes[0],
+    # ).draw()
+    # binning(
+    #     df=df,
+    #     key='num_ip',
+    #     num_bins=10,
+    #     ax=axes[1],
+    # ).draw()
+    # plt.show()
+
+
+    ### ++++++++++++++++++++++++++++++++++++++++++++
+    mutpred2(
+        fpn=to('data/mutpred2.xlsx'),
+        sheet_name='SR24_CtoU',  # SR24_AtoI SR24_CtoU
+        title='SR24_CtoU',  # SR24_AtoI SR24_CtoU
+    )

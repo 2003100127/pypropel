@@ -394,7 +394,7 @@ if __name__ == "__main__":
 
     p = Dispatcher()
 
-    # pos_sgl_list, len_seg = p.pos_single_list(
+    # pos_sgl_list, len_seg = p.pos_sgl_list(
     #     prot_name='1aij',
     #     seq_chain='L',
     #     pdb_fp=to('data/pdb/pdbtm/'),

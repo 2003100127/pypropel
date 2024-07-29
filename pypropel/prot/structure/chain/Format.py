@@ -43,6 +43,7 @@ class Format:
         # print(f)
         f_mirror.close()
         f.close()
+        self.console.print('===============>Successfully reformatted')
         return 'Finished'
 
     def del_END_frompdb(
@@ -75,7 +76,7 @@ if __name__ == "__main__":
     p = Format(
         prot_df=prot_df,
         # sv_fp=FileIO().makedir(to('data/') + '/delend/'),
-        sv_fp=to('data/delend/'),
+        sv_fp=to('data/'),
     )
 
     # print(p.del_END_frompdb_op(
@@ -84,5 +85,5 @@ if __name__ == "__main__":
     # ))
 
     print(p.del_END_frompdb(
-        pdb_path=to('data/'),
+        pdb_path=to('data/pdb/pdbtm/'),
     ))

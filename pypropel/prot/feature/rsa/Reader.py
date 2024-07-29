@@ -65,11 +65,11 @@ if __name__ == "__main__":
     print(p.accpro(
         accpro_fp=to('data/accessibility/accpro/'),
         prot_name='1aig',
-        file_chain='L'
+        file_chain='L',
     ))
 
     print(p.accpro20(
         accpro20_fp=to('data/accessibility/accpro20/'),
         prot_name='1aig',
-        file_chain='L'
+        file_chain='L',
     ))

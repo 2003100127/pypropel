@@ -41,16 +41,19 @@ class OneToOne(Distance.distance):
 
 if __name__ == "__main__":
     from pypropel.path import to
+    import pandas as pd
 
     p = OneToOne(
-        pdb_path1=to('data/pdb/complex/'),
-        pdb_name1='1aig',
-        file_chain1='L',
-        seq_chain1='A',
-        pdb_path2=to('data/pdb/complex/'),
-        pdb_name2='5azd',
-        file_chain2='M',
+        pdb_path1=to('data/pdb/complex/pdbtm/'),
+        pdb_name1='1aij',
+        file_chain1='',
+        seq_chain1='L',
+        pdb_path2=to('data/pdb/complex/pdbtm/'),
+        pdb_name2='1aij',
+        file_chain2='',
         seq_chain2='M',
     )
 
-    print(p.calculate())
+    dist_mat = p.calculate()
+
+    print(pd.DataFrame(dist_mat))

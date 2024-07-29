@@ -1,2 +1,1 @@
-
-
+Data pre-processing plays a key role in accelerating biological research. We are aiming to build a suite of software for better pre-processing biological data.

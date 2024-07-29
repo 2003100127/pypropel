@@ -163,7 +163,7 @@ if __name__ == "__main__":
     features_1d_in = [[] for i in range(len(sequence))]
     features_2d_in = positions
 
-    from pypropel.prot.feature.accessibility.Reader import Reader as a11yreader
+    from pypropel.prot.feature.rsa.Reader import Reader as a11yreader
 
     p = Assemble()
     # df_accpro = a11yreader().accpro(

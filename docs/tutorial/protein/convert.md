@@ -105,7 +105,7 @@ pp.convert.msa2fas(
 ```
 
 :material-note-multiple-outline: Output
-``` shell
+``` text
 28/07/2024 09:37:52 logger: =========>extract E to save
 28/07/2024 09:37:52 logger: =========>extract UR100_A0A023PSW1 to save
 28/07/2024 09:37:52 logger: =========>extract UR100_A0A088DKU1 to save
@@ -133,7 +133,44 @@ pp.convert.msa_reformat(
 ```
 
 :material-note-multiple-outline: Output
-``` shell
+``` text
 28/07/2024 09:53:30 logger: =========> convert from fasta to stockholm
 'Finished'
+```
+
+## 5. Convert from PDB to FASTA
+
+To perform this conversion, a `pp.str` module is used.
+
+:material-language-python: Python
+``` py linenums="1"
+import pypropel as pp
+
+prot_df = pd.DataFrame({
+    'prot': ['1aig', '1aij', '1xqf'],
+    'chain': ['L', 'L', 'A'],
+})
+    
+pp.str.tofasta(
+    prot_df,
+    sv_fp=to('data/'),
+    pdb_path=to('data/pdb/pdbtm/'),
+)
+```
+
+:material-note-multiple-outline: Output
+``` text
+28/07/2024 17:00:02 logger: ============>No0. protein 1aig chain L
+D:\Programming\anaconda3\envs\prot\Lib\site-packages\Bio\PDB\PDBParser.py:395: PDBConstructionWarning: Ignoring unrecognized record 'END' at line 2234
+  warnings.warn(
+28/07/2024 17:00:02 logger: ===============>successfully converted
+28/07/2024 17:00:02 logger: ============>No1. protein 1aij chain L
+D:\Programming\anaconda3\envs\prot\Lib\site-packages\Bio\PDB\PDBParser.py:395: PDBConstructionWarning: Ignoring unrecognized record 'END' at line 2234
+  warnings.warn(
+28/07/2024 17:00:02 logger: ===============>successfully converted
+28/07/2024 17:00:02 logger: ============>No2. protein 1xqf chain A
+D:\Programming\anaconda3\envs\prot\Lib\site-packages\Bio\PDB\PDBParser.py:395: PDBConstructionWarning: Ignoring unrecognized record 'END' at line 2634
+  warnings.warn(
+28/07/2024 17:00:03 logger: ===============>successfully converted
+finished
 ```

@@ -50,8 +50,8 @@ class Run:
         -------
 
         """
-        self.console.print('=========>Protein PDB code: {}'.format(prot_name))
-        self.console.print('=========>Chain of focus: {}'.format(prot_chain))
+        self.console.print('=========>Protein PDB code: {}'.format(self.prot_name))
+        self.console.print('=========>Chain of focus: {}'.format(self.prot_chain))
         multimeric = aaaheavy(
             pdb_fp=self.pdb_fp,
             pdb_name=self.prot_name,
@@ -81,7 +81,8 @@ class Run:
         file_chain = chainname().chain(self.prot_chain)
         self.pfwriter.generic(
             df,
-            self.sv_fp + self.prot_name + file_chain + '.dist'
+            self.sv_fp + self.prot_name + file_chain + '.dist',
+            header=True,
         )
         return 0
 
@@ -99,8 +100,8 @@ class Run:
             python ./template/Mutual.py -pn 1fft -pc1 A -pdbp ./ -k heavy -sp ./
         :return:
         """
-        self.console.print('=========>Protein PDB code: {}'.format(prot_name))
-        self.console.print('=========>Chain of focus: {}'.format(prot_chain))
+        self.console.print('=========>Protein PDB code: {}'.format(self.prot_name))
+        self.console.print('=========>Chain of focus: {}'.format(self.prot_chain))
         file_chain1 = chainname().chain(self.prot_chain)
         multimeric = aaaheavy(
             pdb_fp=self.pdb_fp,

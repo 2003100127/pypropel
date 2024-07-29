@@ -1,0 +1,47 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: 'pypropel'
+  version: {{ data['version'] }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  entry_points:
+    {% for entry_point in data['entry_points']['console_scripts'] %}
+    - {{ entry_point }}
+    {% endfor %}
+  script: python -m pip install --no-deps --ignore-installed .
+
+requirements:
+  build:
+    - python
+    - poetry
+    - pip
+    - setuptools
+
+  run:
+    - python
+    {% for dependency in data['install_requires'] %}
+    - {{ dependency.lower() }}
+    {% endfor %}
+
+#test:
+#  imports:
+#    - {{ data['name'] }}
+#  source_files:
+#    - tests
+#  requires:
+#    {% for test_dep in data['extras_require']['dev'] %}
+#    - {{ test_dep.lower() }}
+#    {% endfor %}
+#  commands:
+#    - pytest tests
+
+about:
+  home: {{ data['url'] }}
+  license: {{ data['license'] }}
+  summary: {{ data['description'] }}
+  doc_source_url: {{ data['url'] + '/blob/master/README.md' }}

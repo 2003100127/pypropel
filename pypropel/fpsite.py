@@ -10,6 +10,8 @@ from typing import List, Dict
 from pypropel.prot.feature.sequence.AminoAcidProperty import AminoAcidProperty as aaprop
 from pypropel.prot.feature.sequence.AminoAcidRepresentation import AminoAcidRepresentation as aarepr
 from pypropel.prot.feature.sequence.Position import Position
+from pypropel.prot.feature.rsa.Reader import Reader as rsareader
+from pypropel.prot.feature.ss.Reader import Reader as ssreader
 
 
 def property(
@@ -97,6 +99,140 @@ def metapsicov():
     return Position().metapsicov()
 
 
+def rsa_solvpred(
+        solvpred_fp,
+        prot_name,
+        file_chain,
+):
+    return rsareader().solvpred(
+        solvpred_fp=solvpred_fp,
+        prot_name=prot_name,
+        file_chain=file_chain,
+    )
+
+
+def rsa_accpro(
+        accpro_fp,
+        prot_name,
+        file_chain,
+):
+    return rsareader().accpro(
+        accpro_fp=accpro_fp,
+        prot_name=prot_name,
+        file_chain=file_chain,
+    )
+
+
+def rsa_accpro20(
+        accpro20_fp,
+        prot_name,
+        file_chain,
+):
+    return rsareader().accpro20(
+        accpro20_fp=accpro20_fp,
+        prot_name=prot_name,
+        file_chain=file_chain,
+    )
+
+
+def ss_spider3(
+        spider3_path,
+        prot_name,
+        file_chain,
+):
+    return ssreader().spider3(
+        spider3_path=spider3_path,
+        prot_name=prot_name,
+        file_chain=file_chain,
+    )
+
+
+def ss_spider3_ss(
+        spider3_path,
+        prot_name,
+        file_chain,
+        sv_fp,
+):
+    return ssreader().spider3_to_ss(
+        spider3_path=spider3_path,
+        prot_name=prot_name,
+        file_chain=file_chain,
+        sv_fp=sv_fp,
+    )
+
+
+def ss_psipred(
+        psipred_path,
+        prot_name,
+        file_chain,
+        kind='ss'
+):
+    """
+
+    Parameters
+    ----------
+    psipred_path
+    prot_name
+    file_chain
+    kind
+        1. ss;
+        2. ss2;
+        3. horiz
+
+    Returns
+    -------
+
+    """
+    if kind == 'ss':
+        return ssreader().psipred(
+            psipred_ss_path=psipred_path,
+            prot_name=prot_name,
+            file_chain=file_chain,
+        )
+    if kind == 'ss2':
+        return ssreader().psipred(
+            psipred_ss2_path=psipred_path,
+            prot_name=prot_name,
+            file_chain=file_chain,
+        )
+    if kind == 'horiz':
+        return ssreader().psipred(
+            psipred_horiz_path=psipred_path,
+            prot_name=prot_name,
+            file_chain=file_chain,
+        )
+    else:
+        return ssreader().psipred(
+            psipred_ss_path=psipred_path,
+            prot_name=prot_name,
+            file_chain=file_chain,
+        )
+
+
+def ss_sspro(
+        sspro_path,
+        prot_name,
+        file_chain,
+):
+    return ssreader().sspro(
+        sspro_path=sspro_path,
+        prot_name=prot_name,
+        file_chain=file_chain,
+    )
+
+
+def ss_sspro8(
+        sspro8_path,
+        prot_name,
+        file_chain,
+):
+    return ssreader().sspro8(
+        sspro8_path=sspro8_path,
+        prot_name=prot_name,
+        file_chain=file_chain,
+    )
+
+
 if __name__ == "__main__":
     from pypropel.prot.sequence.Fasta import Fasta as sfasta
     from pypropel.path import to
@@ -152,3 +288,53 @@ if __name__ == "__main__":
     # print(deepconpred())
     #
     # print(metapsicov())
+
+    # print(rsa_solvpred(
+    #     solvpred_fp=to('data/accessibility/solvpred/'),
+    #     prot_name='1aig',
+    #     file_chain='L',
+    # ))
+
+    # print(rsa_accpro(
+    #     accpro_fp=to('data/accessibility/accpro/'),
+    #     prot_name='1aig',
+    #     file_chain='L',
+    # ))
+
+    # print(rsa_accpro20(
+    #     accpro20_fp=to('data/accessibility/accpro20/'),
+    #     prot_name='1aig',
+    #     file_chain='L',
+    # ))
+
+    # print(ss_psipred(
+    #     psipred_path=to('data/ss/psipred/'),
+    #     prot_name='1aig',
+    #     file_chain='L',
+    #     kind='ss', # horiz, ss, ss2
+    # ))
+
+    # print(ss_sspro(
+    #     sspro_path=to('data/ss/sspro/'),
+    #     prot_name='1aig',
+    #     file_chain='L'
+    # ))
+
+    # print(ss_sspro8(
+    #     sspro8_path=to('data/ss/sspro8/'),
+    #     prot_name='1aig',
+    #     file_chain='L'
+    # ))
+
+    print(ss_spider3(
+        spider3_path=to('data/ss/spider3/'),
+        prot_name='E',
+        file_chain=''
+    ))
+
+    print(ss_spider3_ss(
+        spider3_path=to('data/ss/spider3/'),
+        prot_name='E',
+        file_chain='',
+        sv_fp=to('data/ss/spider3/'),
+    ))

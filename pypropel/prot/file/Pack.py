@@ -7,7 +7,7 @@ __maintainer__ = "Jianfeng Sun"
 
 from pypropel.prot.structure.chain.Splitter import Splitter
 from pypropel.prot.structure.chain.Format import Format
-from pypropel.prot.structure.convert.ToFasta import toFasta
+from pypropel.prot.structure.convert.ToFasta import ToFasta
 from pypropel.prot.structure.hetatm.Remove import Remove as hetatmremover
 from pypropel.prot.sequence.IsEmpty import IsEmpty
 from pypropel.prot.sequence.IsMatch import IsMatch
@@ -45,14 +45,14 @@ class Pack:
         self.console.print('=========>++++++++++++++++++++delete END from PDB files...\n+++++++++++++++++++++++++++')
         FileIO().makedir(pdb_fp + '/delend/')
         Format(
-            prot_df=prot_df,
+            prot_df=self.prot_df,
             sv_fp=pdb_fp + '/delend/',
         ).del_END_frompdb(
             pdb_path=pdb_fp,
         )
         # ### /* block 3. remove hetatm from PDB files */ ###
         self.console.print('=========>++++++++++++++++++++remove hetatm from PDB files...\n+++++++++++++++++++++++++++')
-        hetatmremover(prot_df=prot_df).biopython(
+        hetatmremover(prot_df=self.prot_df).biopython(
             pdb_path=pdb_fp + '/delend/',
             sv_fp=pdb_fp,
         )
@@ -65,9 +65,9 @@ class Pack:
             sv_mismatch_fp=fasta_fp,
             kind=kind,
         ).execute()
-        # ### /* block 5. toFasta */ ###
+        # ### /* block 5. ToFasta */ ###
         self.console.print('=========>++++++++++++++++++++to Fasta...\n+++++++++++++++++++++++++++')
-        toFasta(
+        ToFasta(
             prot_df=self.prot_df,
             sv_fp=fasta_fp
         ).frompdb(
@@ -78,9 +78,8 @@ class Pack:
         IsEmpty(
             self.prot_df,
             sv_empty_fp=fasta_fp,
-        ).fasta(
-            fasta_path=fasta_fp,
-        )
+            fasta_fp=fasta_fp,
+        ).fasta()
         return 'Finished'
 
 

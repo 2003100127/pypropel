@@ -50,9 +50,3 @@ class MSA:
                 continue
             results.append(line)
         return results
-
-    def split(self, msa):
-        msa_sp = []
-        for homolog in msa:
-            msa_sp.append(list(homolog))
-        return msa_sp

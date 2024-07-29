@@ -7,6 +7,9 @@ __maintainer__ = "Jianfeng Sun"
 
 import os
 import sys
+
+import pandas as pd
+
 print(os.path.dirname(os.getcwd()) + '/')
 sys.path.append(os.path.dirname(os.getcwd()) + '/')
 from Bio.PDB.PDBParser import PDBParser
@@ -71,15 +74,17 @@ class Pair(Distance.distance):
         -------
 
         """
-        self.console.print('=========>Protein PDB code 1: {}'.format(prot_name1))
-        self.console.print('=========>Protein PDB chain 1: {}'.format(prot_chain1))
-        self.console.print('=========>Protein PDB code 2: {}'.format(prot_name2))
-        self.console.print('=========>Protein PDB chain 2: {}'.format(prot_chain2))
+        self.console.print('=========>Protein PDB code 1: {}'.format(self.prot_name1))
+        self.console.print('=========>Protein PDB chain 1: {}'.format(self.prot_chain1))
+        self.console.print('=========>Protein PDB code 2: {}'.format(self.prot_name2))
+        self.console.print('=========>Protein PDB chain 2: {}'.format(self.prot_chain2))
         ic = self.check(self.working_chain1, self.working_chain2, thres=self.thres, verbose=self.verbose)
         if ic:
             self.pfwriter.generic(
-                [[self.prot_name1, self.prot_chain1],
-                [self.prot_name2, self.prot_chain2]],
+                df=pd.DataFrame([
+                    [self.prot_name1, self.prot_chain1],
+                    [self.prot_name2, self.prot_chain2],
+                ]),
                 sv_fpn=self.sv_fp + self.prot_name1 + self.prot_chain1 + '_' + self.prot_name2 + self.prot_chain2 + '.pcheck',
             )
         return ic
@@ -133,7 +138,6 @@ if __name__ == "__main__":
             thres = args.t
         if args.op:
             sv_fp = args.op
-
     else:
         from pypropel.path import to
 
@@ -154,8 +158,8 @@ if __name__ == "__main__":
         prot_name2=prot_name2,
         prot_chain1=prot_chain1,
         prot_chain2=prot_chain2,
-        sv_fp=sv_fp,
         thres=thres,
+        sv_fp=sv_fp,
     )
 
     p.run()

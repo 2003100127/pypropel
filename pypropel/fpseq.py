@@ -47,13 +47,13 @@ def length(
 if __name__ == "__main__":
     seq = "ADGCGVGEGTGQGPMCNCMCMKWVYADEDAADLESDSFADEDASLESDSFPWSNQRVFCSFADEDAS"
 
-    # print(composition(
-    #     seq=seq,
-    #     k_spaced=3,
-    #     mode='qac',
-    # )[:3])
-
-    print(length(
+    print(composition(
         seq=seq,
-        mode='log',
+        k_spaced=3,
+        mode='aac',
     ))
+
+    # print(length(
+    #     seq=seq,
+    #     mode='log',
+    # ))

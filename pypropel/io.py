@@ -300,26 +300,28 @@ if __name__ == "__main__":
     from pypropel.util.Reader import Reader as pfreader
     from pypropel.path import to
 
-    df = find_from_folder(
-        file_path=to('data/ex/xml/'),
-        suffix='.xml',
-        flag=1,
-        sv_fpn=None,
-        # sv_fpn=to('data/find.txt'),
-    )
-    print(df)
+    # df = find_from_folder(
+    #     file_path=to('data/ex/xml/'),
+    #     suffix='.xml',
+    #     flag=1,
+    #     sv_fpn=None,
+    #     # sv_fpn=to('data/find.txt'),
+    # )
+    # print(df)
 
-    df_lg = pfreader().generic(to('data/pdbtm_alpha_10.02.2023.txt'), df_sep='\t')
-    df_lg[1], df_lg[2] = zip(*df_lg[0].apply(lambda x: (x.split("_")[0], x.split("_")[1])))
-    print(pd.Series(df_lg[1].unique()))
-
-    pds_diff, psd_rept = list_diff_unipartite(
-        pds_lg=pd.Series(df_lg[1].unique()),
-        pds_sm=df[0],
-        sv_diff_fpn=to('data/diff.txt'),
-        sv_rept_fpn=to('data/repeat.txt'),
-    )
-    print(pds_diff)
+    # df_lg = pfreader().generic(to('data/pdbtm_alpha_10.02.2023.txt'), df_sep='\t')
+    # df_lg[1], df_lg[2] = zip(*df_lg[0].apply(lambda x: (x.split("_")[0], x.split("_")[1])))
+    # print(pd.Series(df_lg[1].unique()))
+    # series_prot_names = pd.Series(df_lg[1].unique())
+    #
+    # pds_diff, psd_rept = list_diff_unipartite(
+    #     pds_lg=series_prot_names,
+    #     pds_sm=df[0],
+    #     sv_diff_fpn=to('data/diff.txt'),
+    #     sv_rept_fpn=to('data/repeat.txt'),
+    # )
+    # print(pds_diff)
+    # print(psd_rept)
 
     # print(move_files(
     #     pds_mv=df_lg[1].unique(),
@@ -328,7 +330,7 @@ if __name__ == "__main__":
     #     suffix='.pdb',
     # ))
 
-    # print(p.copy(
+    # print(copy_files(
     #     pds_cp=df_lg[1].unique(),
     #     cp_from_fp=to('data/ex/pdbtm/'),
     #     cp_to_fp=to('data/ex/tmp/'),
@@ -354,25 +356,23 @@ if __name__ == "__main__":
     #     rename_fp=to('data/ex/tmp/'),
     #     suffix='.pdb',
     # ))
-    #
-    # p = ListDiffer()
-    # from pypropel.path import to
-    #
+
+
     # # #/*** unipartite ***/
-    # df_lg = pfreader().generic(to('../data/pdbtm_alpha_10.02.2023.txt'), df_sep='\t')
-    # df_sm = pfreader().generic(to('../data/pdbtm_alpha_06.30.2023.txt'), df_sep='\t')
+    # df_lg = pfreader().generic(to('data/pdbtm_alpha_10.02.2023.txt'), df_sep='\t')
+    # df_sm = pfreader().generic(to('data/pdbtm_alpha_06.30.2023.txt'), df_sep='\t')
     #
-    # pds_diff, psd_rept = p.unipartite(
+    # pds_diff, psd_rept = list_diff_unipartite(
     #     pds_lg=df_lg[0],
     #     pds_sm=df_sm[0],
-    #     sv_diff_fpn=to('../data/diff.txt'),
-    #     sv_rept_fpn=to('../data/repeat.txt'),
+    #     sv_diff_fpn=to('data/diff.txt'),
+    #     sv_rept_fpn=to('data/repeat.txt'),
     # )
-    # print(pds_diff)
-    # print(psd_rept)
-    # for i in pds_diff:
-    #     print(i)
+    # # print(pds_diff)
+    # # print(psd_rept)
 
+
+    # # #/*** bipartite ***/
     # df = pd.DataFrame()
     # df1 = pd.DataFrame()
     #
@@ -381,12 +381,13 @@ if __name__ == "__main__":
     # print(df)
     # print(df1)
     #
-    # #/*** bipartite ***/
-    # print(p.bipartite(
+    # df_differ, df_repeat = list_diff_bipartite(
     #     pds_lg_1=df[0],
     #     pds_lg_2=df[1],
     #     pds_sm_1=df1[0],
     #     pds_sm_2=df1[1],
     #     sv_diff_fpn=to('data/diff1.txt'),
     #     sv_rept_fpn=to('data/repeat1.txt'),
-    # ))
+    # )
+    # print(df_differ)
+    # print(df_repeat)

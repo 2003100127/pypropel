@@ -1,3 +1,10 @@
+__author__ = "Jianfeng Sun"
+__version__ = "v1.0"
+__copyright__ = "Copyright 2024"
+__license__ = "GPL v3.0"
+__email__ = "jianfeng.sunmt@gmail.com"
+__maintainer__ = "Jianfeng Sun"
+
 from pypropel.util.Reader import Reader as pfreader
 import matplotlib.pyplot as plt
 import numpy as np
@@ -71,7 +78,7 @@ if __name__ == "__main__":
 
     p = Variant()
     print(p.mutpred2(
-        fpn=to('data/variant/mutpred2.xlsx'),
+        fpn=to('data/mutpred2.xlsx'),
         sheet_name='SR24_CtoU', # SR24_AtoI SR24_CtoU
         title='SR24_CtoU', # SR24_AtoI SR24_CtoU
     ))

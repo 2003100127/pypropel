@@ -20,7 +20,7 @@ class Complex:
             pdb_fp,
             prot_name,
             sv_fp,
-            thres=6,
+            thres : float = 6,
             verbose: bool = True,
     ):
         self.pdb_fp = pdb_fp
@@ -46,7 +46,7 @@ class Complex:
         -------
 
         """
-        self.console.print('=========>Protein PDB code: {}'.format(prot_name))
+        self.console.print('=========>Protein PDB code: {}'.format(self.prot_name))
         multimeric = aaaheavy(
             pdb_fp=self.pdb_fp,
             pdb_name=self.prot_name,
@@ -57,9 +57,11 @@ class Complex:
         satisfied = []
         for i in range(num_chains):
             prot_chain1 = chains[i]
+            self.console.print('=========>Protein chain 1: {}'.format(prot_chain1))
             chain1 = model[prot_chain1]
             for j in range(i+1, num_chains):
                 prot_chain2 = chains[j]
+                self.console.print('============>Protein chain 2: {}'.format(prot_chain2))
                 chain2 = model[prot_chain2]
                 if multimeric.check(chain1, chain2, thres=self.thres, verbose=self.verbose):
                     satisfied.append([self.prot_name, prot_chain1])
@@ -99,10 +101,12 @@ if __name__ == "__main__":
         pdb_fp = to('data/pdb/complex/pdbtm/')
         prot_name = '1aij'
         sv_fp = to('data/pdb/complex/pdbtm/')
+        thres = 2.5
 
     p = Complex(
         pdb_fp=pdb_fp,
         prot_name=prot_name,
+        thres=thres,
         sv_fp=sv_fp,
     )
     p.run()
