@@ -25,4 +25,9 @@ setup(
         'scikit-learn',
         # 'pyfiglet', # ==0.8.post1
     ],
+    entry_points={
+        'console_scripts': [
+            'pypropel=pypropel.main:main',
+        ],
+    }
 )
