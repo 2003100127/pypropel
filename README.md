@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/2003100127/pypropel/blob/main/docs/img/pypropel-logo.png?raw=true" width="200" height="124">
+    <img src="https://github.com/2003100127/pypropel/blob/main/docs/img/pypropel-logo.png?raw=true" width="200" height="55">
     <br>
 </h1>
 
