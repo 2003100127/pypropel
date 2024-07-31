@@ -1,8 +1,11 @@
 
+<figure markdown="span">
+  ![Image title](./img/pypropel-logo.png){ width="200" align="left" }
+</figure>
+
 !!! success ""
 
-    # ![Image title](./img/pypropel-logo.png){ width="80"} Welcome to using PyPropel!
-
+    # Welcome to using PyPropel!
 
 PyPropel provides a Python interface to better pre-processing protein data and post-processing.
 

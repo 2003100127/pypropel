@@ -5,42 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2045bc2-f928-4f74-b5d2-13b785a17b6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/tutorial/protein/feature-vector/whole-protein.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/protein/Convert.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/protein/convert.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/protein/IO/msa.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/protein/IO/msa.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/protein/feature/property.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/protein/feature/property.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/protein/vectorisation/pairwise-site.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/protein/feature-vector/pairwise-site.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/protein/vectorisation/single-site.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/protein/feature-vector/single-site.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/protein/vectorisation/whole-protein.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/dist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/fpmsa.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/fpmsa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/fpseq.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/fpseq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/fpsite.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/fpsite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/io.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/msa.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/msa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/feature/accessibility/Assemble.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/feature/rsa/Assemble.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/feature/accessibility/Reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/feature/rsa/Reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/feature/accessibility/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/feature/rsa/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/feature/alignment/MSA.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/feature/alignment/MSA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/feature/alignment/representation/Frequency.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/feature/alignment/representation/Frequency.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/file/Pack.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/file/Pack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/plot/Binning.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/plot/Binning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/plot/Variant.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/plot/Variant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/chain/Format.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/chain/Format.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/convert/ToFasta.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/convert/ToFasta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/Label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/Complex.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/Complex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/Pair.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/Pair.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy/AllAgainstAll.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy/AllAgainstAll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy/OneToOne.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy/OneToOne.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy/Run.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy/Run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/tool/isite/Dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/tool/isite/Dispatcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/seq.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/seq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,50 +34,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Binning.executor": "Run",
-    "Python.Complex.executor": "Run",
-    "Python.Composition.executor": "Run",
-    "Python.Conservation.executor": "Run",
-    "Python.ConvertM2S.executor": "Run",
-    "Python.Dispatch.executor": "Run",
-    "Python.Format.executor": "Run",
-    "Python.Frequency.executor": "Run",
-    "Python.JSD.executor": "Run",
-    "Python.Label.executor": "Run",
-    "Python.MetricFormatter.executor": "Run",
-    "Python.OneToOne.executor": "Run",
-    "Python.Pair.executor": "Run",
-    "Python.Position.executor": "Run",
-    "Python.ROCPR.executor": "Run",
-    "Python.Run.executor": "Run",
-    "Python.Text.executor": "Run",
-    "Python.Variant.executor": "Run",
-    "Python.convert.executor": "Run",
-    "Python.dataset.executor": "Run",
-    "Python.dist.executor": "Run",
-    "Python.eval.executor": "Run",
-    "Python.fpmsa.executor": "Run",
-    "Python.fpseq.executor": "Run",
-    "Python.fpsite.executor": "Run",
-    "Python.io.executor": "Run",
-    "Python.msa.executor": "Run",
-    "Python.plot.executor": "Run",
-    "Python.seq.executor": "Run",
-    "Python.struct.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Document/Programming/Python/pypropel",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "PyScientificConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Binning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Complex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Composition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Conservation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ConvertM2S.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dispatch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Format.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Frequency.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JSD.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Label.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MetricFormatter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OneToOne.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Pair.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Position.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ROCPR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Text.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Variant.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convert.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dist.executor&quot;: &quot;Run&quot;,
+    &quot;Python.eval.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fpmsa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fpseq.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fpsite.executor&quot;: &quot;Run&quot;,
+    &quot;Python.io.executor&quot;: &quot;Run&quot;,
+    &quot;Python.msa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.seq.executor&quot;: &quot;Run&quot;,
+    &quot;Python.struct.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Document/Programming/Python/pypropel&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;PyScientificConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Document\Programming\Python\pypropel\docs\tutorial" />
@@ -264,7 +230,8 @@
       <updated>1722035910651</updated>
       <workItem from="1722035911754" duration="56608000" />
       <workItem from="1722176434640" duration="34110000" />
-      <workItem from="1722213358848" duration="6920000" />
+      <workItem from="1722213358848" duration="10624000" />
+      <workItem from="1722293796728" duration="5256000" />
     </task>
     <servers />
   </component>

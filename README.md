@@ -78,7 +78,7 @@ PyPropel can be installed in the following ways.
 
 ## 🚀 Get started
 ``` py
-import pypropel 
+import pypropel as pp
 ```
 
 ## 📄 Citation
