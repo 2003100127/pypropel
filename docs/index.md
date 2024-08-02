@@ -3,9 +3,9 @@
   ![Image title](./img/pypropel-logo.png){ width="200" align="left" }
 </figure>
 
-!!! success ""
+!!! tip ""
 
-    # Welcome to using PyPropel!
+    # Welcome to the PyPropel documentation🚀.
 
 PyPropel provides a Python interface to better pre-processing protein data and post-processing.
 
