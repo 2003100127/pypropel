@@ -272,3 +272,5 @@ if __name__ == "__main__":
         sv_df_fpn=to('data/uniprot/text/human.txt'),
     )
     print(p.parse())
+    df = p.parse()
+    print(df.loc[df['tms_nums'] != 0])

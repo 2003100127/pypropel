@@ -79,14 +79,17 @@ if __name__ == "__main__":
     from pypropel.path import to
 
     p = ConvertM2S(
-        input_fpn=to('data/msa/experimental_protein.fasta'),
+        # input_fpn=to('data/msa/experimental_protein.fasta'),
+        # in_format='fasta',
+        # sv_fp=to('data/msa/'),
+        input_fpn=to('data/yutong/protein.fasta'),
         in_format='fasta',
-        sv_fp=to('data/msa/'),
+        sv_fp=to('data/yutong/'),
     )
 
     print(p.tofasta())
-    # print(p.df.target_ids)
-    # print(p.df.drug_ids)
+    print(p.df.target_ids)
+    print(p.df.drug_ids)
 
     # from collections import Counter
     # print(Counter(p.drugbank_target_ids()))

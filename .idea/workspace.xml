@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d2045bc2-f928-4f74-b5d2-13b785a17b6c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pypropel/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pypropel/prot/sequence/ConvertM2S.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/sequence/ConvertM2S.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pypropel/prot/uniprot/Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/uniprot/Text.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +89,7 @@
       <recent name="D:\Document\Programming\Python\pypropel\docs\tutorial\protein1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.io">
+  <component name="RunManager" selected="Python.Text">
     <configuration name="Binning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pypropel" />
       <option name="ENV_FILES" value="" />
@@ -111,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ConvertM2S" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pypropel" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,12 +122,35 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypropel" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypropel/prot/sequence" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/dataset.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/prot/sequence/ConvertM2S.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Text" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pypropel" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypropel/prot/uniprot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/prot/uniprot/Text.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,29 +174,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/io.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="msa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pypropel" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypropel" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/msa.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -205,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Text" />
+        <item itemvalue="Python.ConvertM2S" />
         <item itemvalue="Python.io" />
         <item itemvalue="Python.Binning" />
         <item itemvalue="Python.plot" />
-        <item itemvalue="Python.dataset" />
-        <item itemvalue="Python.msa" />
       </list>
     </recent_temporary>
   </component>
@@ -234,6 +236,9 @@
       <workItem from="1722293796728" duration="5256000" />
       <workItem from="1722458982024" duration="1013000" />
       <workItem from="1722517341229" duration="707000" />
+      <workItem from="1722759647650" duration="4308000" />
+      <workItem from="1725183282483" duration="597000" />
+      <workItem from="1725868734266" duration="879000" />
     </task>
     <servers />
   </component>
@@ -245,14 +250,14 @@
     <SUITE FILE_PATH="coverage/pypropel$MetricFormatter.coverage" NAME="MetricFormatter Coverage Results" MODIFIED="1722208586748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/plot" />
     <SUITE FILE_PATH="coverage/pypropel$Run.coverage" NAME="Run Coverage Results" MODIFIED="1722194588002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy" />
     <SUITE FILE_PATH="coverage/pypropel$Dispatch.coverage" NAME="Dispatch Coverage Results" MODIFIED="1722202396723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/tool/isite" />
-    <SUITE FILE_PATH="coverage/pypropel$Text.coverage" NAME="Text Coverage Results" MODIFIED="1722081886424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/uniprot" />
+    <SUITE FILE_PATH="coverage/pypropel$Text.coverage" NAME="Text Coverage Results" MODIFIED="1722761847709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/uniprot" />
     <SUITE FILE_PATH="coverage/pypropel$Label.coverage" NAME="Label Coverage Results" MODIFIED="1722198804636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/distance/isite" />
     <SUITE FILE_PATH="coverage/pypropel$fpsite.coverage" NAME="fpsite Coverage Results" MODIFIED="1722207516380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel" />
-    <SUITE FILE_PATH="coverage/pypropel$msa.coverage" NAME="msa Coverage Results" MODIFIED="1722210361972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel" />
     <SUITE FILE_PATH="coverage/pypropel$Format.coverage" NAME="Format Coverage Results" MODIFIED="1722182609382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/chain" />
+    <SUITE FILE_PATH="coverage/pypropel$msa.coverage" NAME="msa Coverage Results" MODIFIED="1722210361972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel" />
     <SUITE FILE_PATH="coverage/pypropel$struct.coverage" NAME="struct Coverage Results" MODIFIED="1722188627498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel" />
     <SUITE FILE_PATH="coverage/pypropel$Complex.coverage" NAME="Complex Coverage Results" MODIFIED="1722189514340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check" />
-    <SUITE FILE_PATH="coverage/pypropel$ConvertM2S.coverage" NAME="ConvertM2S Coverage Results" MODIFIED="1722042763779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/sequence" />
+    <SUITE FILE_PATH="coverage/pypropel$ConvertM2S.coverage" NAME="ConvertM2S Coverage Results" MODIFIED="1722759845151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/sequence" />
     <SUITE FILE_PATH="coverage/pypropel$fpseq.coverage" NAME="fpseq Coverage Results" MODIFIED="1722178597166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel" />
     <SUITE FILE_PATH="coverage/pypropel$Composition.coverage" NAME="Composition Coverage Results" MODIFIED="1722118820392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/feature/alignment" />
     <SUITE FILE_PATH="coverage/pypropel$Frequency.coverage" NAME="Frequency Coverage Results" MODIFIED="1722209523797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/feature/alignment/representation" />

@@ -8,8 +8,8 @@ __maintainer__ = "Jianfeng Sun"
 from typing import Tuple
 
 import pandas as pd
-from util.FileIO import FileIO
-from util.ListDiffer import ListDiffer
+from pypropel.util.FileIO import FileIO
+from pypropel.util.ListDiffer import ListDiffer
 
 
 def list_diff_unipartite(
