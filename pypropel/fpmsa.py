@@ -112,12 +112,12 @@ if __name__ == "__main__":
     from pypropel.prot.feature.alignment.MSA import MSA as msaparser
     from pypropel.path import to
 
-    msa = msaparser(msa_fpn=to('data/msa/aln/1aijL.aln')).read()
+    msa1 = msaparser(msa_fpn=to('data/msa/aln/1aijL.aln')).read()
     # print(msa)
 
-    # print(length(msa=msa))
+    print(length(msa=msa1))
 
-    ent_dict = entropy(msa=msa)
+    # ent_dict = entropy(msa=msa)
     # print(ent_dict)
 
     # ent_dict = entropy_gap(msa=msa, gap_thres=100)
@@ -129,17 +129,55 @@ if __name__ == "__main__":
 
     # print(mutual_information(msa=msa, i=1, j=2))
 
-    print(composition(
-        msa=msa,
-        mode='aac',
+    # print(composition(
+    #     msa=msa,
+    #     mode='aac',
+    # ))
+
+    print(pssm(
+        fpn=to('data/pssm/1aigL.pssm'),
+        mode='blast',
+        # fpn=to('data/hhm/1aigL.hhm'),
+        # mode='hhm',
     ))
 
-    # print(pssm(
-    #     # fpn=to('data/pssm/1aigL.pssm'),
-    #     # mode='blast',
-    #     fpn=to('data/hhm/1aigL.hhm'),
-    #     mode='hhm',
-    # ))
+    da = pssm(
+        fpn=to('data/pssm/1aigL.pssm'),
+        mode='blast',
+        # fpn=to('data/hhm/1aigL.hhm'),
+        # mode='hhm',
+    )
+
+    feature_vector = [[] for i in range(281)]
+    print(feature_vector)
+
+    for i in range(281):
+        feature_vector[i] = feature_vector[i] + [0 for i in range(27)]
+
+    print(feature_vector)
+
+
+    for i in range(281):
+        feature_vector[i] = feature_vector[i] + da[i+1]
+
+    print(feature_vector)
+    # print(len(feature_vector))
+    # print(len(feature_vector[0]))
+
+    import numpy as np
+    one_hot_cls = np.zeros((281, 20))
+    print(one_hot_cls)
+    seq = 'A' * 281
+    aa_map = {'A': 0, 'C': 1, 'D': 2, }
+    cols = [aa_map[i] for i in seq]
+    # print(cols)
+    one_hot_cls[np.arange(281), cols] = 1
+    print(one_hot_cls)
+
+    for i in range(281):
+        feature_vector[i] = feature_vector[i] + one_hot_cls[i].tolist()
+
+    print(feature_vector)
 
     # print(jsd(
     #     fpn=to('data/conservation/jsd/SR24_CtoU/CLEC2B_LOC113845378.jsd'),

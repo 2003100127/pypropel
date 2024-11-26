@@ -46,14 +46,67 @@ def length(
 
 if __name__ == "__main__":
     seq = "ADGCGVGEGTGQGPMCNCMCMKWVYADEDAADLESDSFADEDASLESDSFPWSNQRVFCSFADEDAS"
+    print(seq)
 
-    print(composition(
-        seq=seq,
-        k_spaced=3,
-        mode='aac',
-    ))
+    # print(composition(
+    #     seq=seq,
+    #     k_spaced=3,
+    #     mode='aac',
+    # ))
 
     # print(length(
     #     seq=seq,
     #     mode='log',
     # ))
+
+    feature_vector = [[] for i in range(len(seq))]
+    print(feature_vector)
+    print(len(feature_vector))
+
+    aac_dict = composition(
+        seq=seq,
+        k_spaced=3,
+        mode='aac',
+    )
+    print(aac_dict)
+
+    l_normal = length(
+      seq=seq,
+      mode='normal',
+    )
+    print(l_normal)
+
+    l_log = length(
+        seq=seq,
+        mode='log',
+    )
+    print(l_log)
+
+    for i, c in enumerate(feature_vector):
+    #     print(i, c)
+        feature_vector[i].append(i)
+        feature_vector[i].append(seq[i])
+    # print(feature_vector)
+
+    for i, c in enumerate(feature_vector):
+        feature_vector[i].append(aac_dict[feature_vector[i][1]])
+
+    for i, c in enumerate(feature_vector):
+        feature_vector[i].append(l_normal)
+        feature_vector[i].append(float(l_log))
+
+    for i, c in enumerate(feature_vector):
+        if i < 32:
+            feature_vector[i].append(1)
+        else:
+            feature_vector[i].append(0)
+
+    # print(feature_vector)
+    import numpy as np
+    train_label = np.array(feature_vector)[:,-1].astype(int)
+    train_feature = np.array(feature_vector)[:,2:-1].astype(float)
+    # print(train_label)
+    # print(train_feature)
+
+    sd  = np.array(feature_vector)[:,2:]
+    print(sd[:, np.newaxis].shape)

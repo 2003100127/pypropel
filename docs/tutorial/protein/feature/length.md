@@ -1,5 +1,6 @@
 ## Sequence
 `pp.fpseq.length` is used to measure the length of a protein sequence.
+There are two options: `log` and `normal`.
 
 :material-language-python: Python
 ``` py linenums="1"

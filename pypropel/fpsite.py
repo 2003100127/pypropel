@@ -236,37 +236,37 @@ def ss_sspro8(
 if __name__ == "__main__":
     from pypropel.prot.sequence.Fasta import Fasta as sfasta
     from pypropel.path import to
-    import tmkit as tmk
+    # import tmkit as tmk
 
-    print(property('positive'))
-
-    sequence = sfasta().get(
-        fasta_fpn=to("data/fasta/1aigL.fasta")
-    )
-    # print(sequence)
-
-    pos_list = tmk.seq.pos_list_single(len_seq=len(sequence), seq_sep_superior=None, seq_sep_inferior=0)
-    # print(pos_list)
-
-    positions = tmk.seq.pos_single(sequence=sequence, pos_list=pos_list)
-    # print(positions)
-
-    win_aa_ids = tmk.seq.win_id_single(
-        sequence=sequence,
-        position=positions,
-        window_size=1,
-    )
-    # print(win_aa_ids)
-
-    win_aas = tmk.seq.win_name_single(
-        sequence=sequence,
-        position=positions,
-        window_size=1,
-        mids=win_aa_ids,
-    )
-    # print(win_aas)
-
-    features = [[] for i in range(len(sequence))]
+    # print(property('positive'))
+    #
+    # sequence = sfasta().get(
+    #     fasta_fpn=to("data/fasta/1aigL.fasta")
+    # )
+    # # print(sequence)
+    #
+    # pos_list = tmk.seq.pos_list_single(len_seq=len(sequence), seq_sep_superior=None, seq_sep_inferior=0)
+    # # print(pos_list)
+    #
+    # positions = tmk.seq.pos_single(sequence=sequence, pos_list=pos_list)
+    # # print(positions)
+    #
+    # win_aa_ids = tmk.seq.win_id_single(
+    #     sequence=sequence,
+    #     position=positions,
+    #     window_size=1,
+    # )
+    # # print(win_aa_ids)
+    #
+    # win_aas = tmk.seq.win_name_single(
+    #     sequence=sequence,
+    #     position=positions,
+    #     window_size=1,
+    #     mids=win_aa_ids,
+    # )
+    # # print(win_aas)
+    #
+    # features = [[] for i in range(len(sequence))]
     # print(features)
     # print(len(features))
 
@@ -326,15 +326,29 @@ if __name__ == "__main__":
     #     file_chain='L'
     # ))
 
-    print(ss_spider3(
-        spider3_path=to('data/ss/spider3/'),
-        prot_name='E',
-        file_chain=''
+    # print(ss_spider3(
+    #     spider3_path=to('data/ss/spider3/'),
+    #     prot_name='E',
+    #     file_chain=''
+    # ))
+
+    # print(ss_spider3_ss(
+    #     spider3_path=to('data/ss/spider3/'),
+    #     prot_name='E',
+    #     file_chain='',
+    #     sv_fp=to('data/ss/spider3/'),
+    # ))
+
+
+    seq = "ADGCGVGEGTGQGPMCNCMCMKWVYADEDAADLESDSFADEDASLESDSFPWSNQRVFCSFADEDAS"
+    print(seq)
+
+    feature_vector = [[] for i in range(len(seq))]
+    print(feature_vector)
+    print(len(feature_vector))
+
+    print(property(
+        prop_met='Hopp',
+        prop_kind='hydrophilicity'
     ))
 
-    print(ss_spider3_ss(
-        spider3_path=to('data/ss/spider3/'),
-        prot_name='E',
-        file_chain='',
-        sv_fp=to('data/ss/spider3/'),
-    ))

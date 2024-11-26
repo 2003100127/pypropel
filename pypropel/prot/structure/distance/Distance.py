@@ -9,9 +9,32 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.getcwd()) + '/')
 from abc import ABCMeta, abstractmethod
-from Bio.PDB.Polypeptide import three_to_one
+# from Bio.PDB.Polypeptide import three_to_one
 from pypropel.util.Console import Console
 console = Console()
+
+three_to_one = {
+    'CYS': 'C',
+    'ASP': 'D',
+    'SER': 'S',
+    'GLN': 'Q',
+    'LYS': 'K',
+    'ILE': 'I',
+    'PRO': 'P',
+    'THR': 'T',
+    'PHE': 'F',
+    'ASN': 'N',
+    'GLY': 'G',
+    'HIS': 'H',
+    'LEU': 'L',
+    'ARG': 'R',
+    'TRP': 'W',
+    'ALA': 'A',
+    'VAL':'V',
+    'GLU': 'E',
+    'TYR': 'Y',
+    'MET': 'M',
+}
 
 
 class distance(metaclass=ABCMeta):
