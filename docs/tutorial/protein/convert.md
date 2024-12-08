@@ -41,7 +41,7 @@ df = pp.convert.single2many(
 
 ## 2. Splitting into single proteins
 
-1.1 Command
+1.1 Proteins from DrugBank
 
 ``` py linenums="1"
 import pypropel as pp
@@ -49,6 +49,20 @@ import pypropel as pp
 df, df_new = pp.convert.many2single(
     fasta_fpn=to('data/msa/experimental_protein.fasta'),
     sv_fp=to('data/msa/')
+)
+```
+
+1.2 Fasta from UniProt
+Only extract human proteins by adding species as 'HUMAN'.
+
+``` py linenums="1"
+import pypropel as pp
+
+df, df_new = pp.convert.many2single(
+    fasta_fpn=to('data/uniprotkb_KW_0812_AND_reviewed_true_AND_2024_12_08.fasta'),
+    mode='uniprot',
+    species='HUMAN',
+    sv_fp=to('data/')
 )
 ```
 

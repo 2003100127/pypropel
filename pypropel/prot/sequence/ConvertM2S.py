@@ -18,12 +18,15 @@ class ConvertM2S:
             self,
             input_fpn : str ,
             in_format : str = 'fasta',
+            mode : str = 'drugbank',
             sv_fp : str = './',
             verbose : bool = True,
+            **kwargs,
     ):
         self.input_fpn = input_fpn
         self.in_format = in_format
         self.sv_fp = sv_fp
+        self.kwargs = kwargs
 
         self.fasta_ids = []
         self.fasta_seqs = []
@@ -40,8 +43,15 @@ class ConvertM2S:
             "fasta_names": self.fasta_names,
             "fasta_dpts": self.fasta_dpts,
         })
-        self.df = self.drugbank_target_ids()
-        self.df = self.drugbank_drug_ids()
+        print(self.df)
+
+        if mode == "drugbank":
+            self.df = self.drugbank_target_ids()
+            self.df = self.drugbank_drug_ids()
+        if mode == "uniprot":
+            self.df = self.uniprot()
+            self.df = self.df.loc[self.df['species'] == self.kwargs['species']]
+        print(self.df)
 
         self.pfreader = pfreader()
         self.console = Console()
@@ -56,6 +66,11 @@ class ConvertM2S:
     def drugbank_target_ids(self, ):
         self.df['target_ids'] = self.df['fasta_ids'].apply(lambda x: re.sub(r'^.*\|', "", str(x)))
         # self.df['target_ids'] = self.df['fasta_ids'].apply(lambda x: re.split('\|', str(x))[1])
+        return self.df
+
+    def uniprot(self, ):
+        self.df['target_ids'] = self.df.fasta_names.apply(lambda x: x.split('|')[1])
+        self.df['species'] = self.df.fasta_names.apply(lambda x: x.split('|')[2].split('_')[1])
         return self.df
 
     def drugbank_drug_ids(self, ):
@@ -82,14 +97,17 @@ if __name__ == "__main__":
         # input_fpn=to('data/msa/experimental_protein.fasta'),
         # in_format='fasta',
         # sv_fp=to('data/msa/'),
-        input_fpn=to('data/yutong/protein.fasta'),
+        # input_fpn=to('data/yutong/protein.fasta'),
+        input_fpn=to('data/fasta/uniprot_sprot_varsplic.fasta'),
         in_format='fasta',
-        sv_fp=to('data/yutong/'),
+        mode='uniprot',
+        species='HUMAN',
+        sv_fp=to('data/fasta/'),
     )
 
-    print(p.tofasta())
-    print(p.df.target_ids)
-    print(p.df.drug_ids)
+    # print(p.tofasta())
+    # print(p.df.target_ids)
+    # print(p.df.drug_ids)
 
     # from collections import Counter
     # print(Counter(p.drugbank_target_ids()))
