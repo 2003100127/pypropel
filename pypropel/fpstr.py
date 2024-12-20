@@ -58,36 +58,36 @@ if __name__ == "__main__":
     from pypropel.path import to
     import pandas as pd
 
-    prot_df = pd.DataFrame({
-        'prot': ['1aij', '1aig', '1xqf', ],
-        'chain': ['L', 'L', 'A', ],
-    })
-    for i in prot_df.index:
-        print('No.{}: protein: {} chain: {}'.format(i + 1, prot_df.loc[i, 'prot'], prot_df.loc[i, 'chain']))
-        threedi_dict = threedi(
-            prot_name=prot_df.loc[i, 'prot'],
-            prot_chain=prot_df.loc[i, 'chain'],
-            pdb_fp=to('data/pdb/pdbtm/'),
-            mode='chain',
-        )
-        print(threedi_dict)
-
-
     # prot_df = pd.DataFrame({
-    #     'prot': ['3pux', '3rko', '3udc', '3vr8', '4kjs', '4pi2', ],
-    #     'chain': ['G', 'A', 'A', 'D', 'A', 'C', ],
+    #     'prot': ['1aij', '1aig', '1xqf', ],
+    #     'chain': ['L', 'L', 'A', ],
     # })
     # for i in prot_df.index:
     #     print('No.{}: protein: {} chain: {}'.format(i + 1, prot_df.loc[i, 'prot'], prot_df.loc[i, 'chain']))
-    #     # dssp_rsa_run(
-    #     #     prot_name=prot_df.loc[i, 'prot'],
-    #     #     prot_chain=prot_df.loc[i, 'chain'],
-    #     #     pdb_fp='data/pdb/pdbtm/',
-    #     #     sv_fp='data/rsa/',
-    #     # )
-    #     df_rsa = dssp_rsa_access(
+    #     threedi_dict = threedi(
     #         prot_name=prot_df.loc[i, 'prot'],
     #         prot_chain=prot_df.loc[i, 'chain'],
-    #         rsa_fp=to('data/rsa/')
+    #         pdb_fp=to('data/pdb/pdbtm/'),
+    #         mode='chain',
     #     )
-    #     print(df_rsa)
+    #     print(threedi_dict)
+
+
+    prot_df = pd.DataFrame({
+        'prot': ['3pux', '3rko', '3udc', '3vr8', '4kjs', '4pi2', ],
+        'chain': ['G', 'A', 'A', 'D', 'A', 'C', ],
+    })
+    for i in prot_df.index:
+        print('No.{}: protein: {} chain: {}'.format(i + 1, prot_df.loc[i, 'prot'], prot_df.loc[i, 'chain']))
+        # dssp_rsa_run(
+        #     prot_name=prot_df.loc[i, 'prot'],
+        #     prot_chain=prot_df.loc[i, 'chain'],
+        #     pdb_fp='data/pdb/pdbtm/',
+        #     sv_fp='data/rsa/',
+        # )
+        df_rsa = dssp_rsa_access(
+            prot_name=prot_df.loc[i, 'prot'],
+            prot_chain=prot_df.loc[i, 'chain'],
+            rsa_fp=to('data/rsa/')
+        )
+        print(df_rsa)
