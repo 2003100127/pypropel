@@ -5,6 +5,8 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
+from typing import Union
+
 import time
 import pandas as pd
 from pypropel.util.ComputLib import ComputLib as computlib
@@ -60,7 +62,7 @@ class Label:
             self,
             dist_df,
             pos_df,
-            by : str | float = 'interact_id',
+            by : Union[str, float] = 'interact_id',
     ):
         dist_df_ = dist_df[[
             'fasta_id',

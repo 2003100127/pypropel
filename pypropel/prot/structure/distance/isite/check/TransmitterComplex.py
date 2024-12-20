@@ -6,8 +6,8 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 import os
-import subprocess
 from pypropel.util.FileIO import FileIO
+
 
 class TransmitterComplex:
 
@@ -109,20 +109,24 @@ if __name__ == "__main__":
     from pypropel.util.Reader import Reader as pfreader
     from pypropel.path import to
 
-    df = pfreader().generic(df_fpn=to('data/ex/final.txt'), header=0)
+    df = pfreader().generic(df_fpn='./cplx.txt')
     # prots = df.prot.unique()[:2000]
-    prots = df.prot.unique()[2000:]
+    # prots = df.prot.unique()[2000:]
+    prots = df[0].unique()
+    print(prots)
 
     param_config = {
         'pdb_fp': '-fp',
         'pdb_fn': '-fn',
         'sv_fp': '-op',
+        'thres': '-t',
     }
     value_config = {
-        'tool_fp': '/home/j/jsun/miniconda3/envs/scflow/bin/python',
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'script_fpn': '/home/j/jsun/store/software/pypropel/pypropel/prot/structure/distance/ppi/template/Complex.py',
+        'tool_fp': '/project/cribbslab/jsun/miniconda3/envs/scflow/bin/python',
+        'script_fpn': '/home/j/jsun/store/software/pypropel/pypropel/prot/structure/distance/isite/check/Complex.py',
         'pdb_fp': '/project/cribbslab/shared/proj048/sun/pdbtm/',
         'sv_fp': '/project/cribbslab/shared/proj048/sun/check/',
+        'thres': '5.5',
     }
 
     for key, prot in enumerate(prots):
@@ -132,11 +136,12 @@ if __name__ == "__main__":
 
             param_config['pdb_fp'], value_config['pdb_fp'],
             param_config['pdb_fn'], prot,
+            param_config['thres'], value_config['thres'],
             param_config['sv_fp'], value_config['sv_fp'],
         ]
         p = TransmitterComplex(
             order_list=order_list,
-            job_fp='/ceph/project/cribbslab/shared/proj048/sun/pdbtm/jobs/',
+            job_fp='/project/cribbslab/shared/proj048/sun/pdbtm/jobs/',
             job_fn=str(key),
             cpu=2,
             memory=10,

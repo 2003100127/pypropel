@@ -12,6 +12,62 @@ from pypropel.util.FileIO import FileIO
 from pypropel.util.ListDiffer import ListDiffer
 
 
+def read(
+        df_fpn,
+        df_sep='\t',
+        skiprows=None,
+        header=None,
+        encoding='utf-8',
+        comment=None,
+        sheet_name='Sheet1',
+        kind='csv',
+):
+    if kind == 'csv':
+        return pd.read_csv(
+            df_fpn,
+            sep=df_sep,
+            header=header,
+            encoding=encoding,
+            skiprows=skiprows,
+            comment=comment,
+        )
+    elif kind == 'excel':
+        return pd.read_excel(
+            df_fpn,
+            sheet_name=sheet_name,
+            header=header,
+            engine='openpyxl',
+        )
+
+
+def write(
+        df,
+        sv_fpn,
+        df_sep='\t',
+        header=None,
+        index=False,
+        sheet_name='Sheet1',
+        id_from=0,
+        kind='csv',
+):
+    df_ = pd.DataFrame(df)
+    df_.index = df_.index + id_from
+    if kind == 'csv':
+        return df_.to_csv(
+            sv_fpn,
+            sep=df_sep,
+            header=header,
+            index=index
+        )
+    elif kind == 'excel':
+        df_.to_excel(
+            sv_fpn,
+            sheet_name=sheet_name,
+            header=header,
+            index=index
+        )
+
+
 def list_diff_unipartite(
         pds_lg : pd.Series,
         pds_sm : pd.Series,

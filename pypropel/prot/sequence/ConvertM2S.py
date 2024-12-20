@@ -18,7 +18,6 @@ class ConvertM2S:
             self,
             input_fpn : str ,
             in_format : str = 'fasta',
-            mode : str = 'drugbank',
             sv_fp : str = './',
             verbose : bool = True,
             **kwargs,
@@ -45,10 +44,10 @@ class ConvertM2S:
         })
         print(self.df)
 
-        if mode == "drugbank":
+        if self.kwargs['mode'] == "drugbank":
             self.df = self.drugbank_target_ids()
             self.df = self.drugbank_drug_ids()
-        if mode == "uniprot":
+        if self.kwargs['mode'] == "uniprot":
             self.df = self.uniprot()
             self.df = self.df.loc[self.df['species'] == self.kwargs['species']]
         print(self.df)

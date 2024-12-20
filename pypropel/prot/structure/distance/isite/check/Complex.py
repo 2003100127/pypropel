@@ -73,8 +73,8 @@ class Complex:
 
 
 if __name__ == "__main__":
-    # source = True
-    source = False
+    source = True
+    # source = False
     if source:
         import argparse
         parser = argparse.ArgumentParser(description='PPIs in a complex')
@@ -85,6 +85,9 @@ if __name__ == "__main__":
             "--pdb_fn", "-fn", help='complex name', type=str
         )
         parser.add_argument(
+            "--thres", "-t", help='threshold of dists', type=float
+        )
+        parser.add_argument(
             "--sv_fp", "-op", help='output path', type=str
         )
         args = parser.parse_args()
@@ -93,6 +96,8 @@ if __name__ == "__main__":
             pdb_fp = args.pdb_fp
         if args.pdb_fn:
             prot_name = args.pdb_fn
+        if args.thres:
+            thres = args.thres
         if args.sv_fp:
             sv_fp = args.sv_fp
     else:

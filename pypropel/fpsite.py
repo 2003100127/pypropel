@@ -59,7 +59,7 @@ def property(
         "volume": aaprop().volume,
         "polarity": aaprop().polarity,
         "composition": aaprop().composition,
-    }[prop_kind](kind=prop_met, standardize=standardize)
+    }[prop_kind](standardize=standardize)
 
 
 def onehot(

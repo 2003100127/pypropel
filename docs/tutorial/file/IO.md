@@ -210,3 +210,39 @@ rename_file_suffix
 rename_file_prefix
 makedir
 ```
+
+Below shows an example that a list of proteins are moved from `data/isoform/` to `data/isoform/transmembrane/`.
+
+:material-language-python: Python
+``` py linenums="1"
+df_cano = pp.io.find_from_folder(
+    file_path='data/canonical/',
+    suffix='.fasta',
+    flag=1,
+    sv_fpn=None,
+    # sv_fpn=to('data/find.txt'),
+)
+print(df_cano)
+
+df_isof = pp.io.find_from_folder(
+    file_path='data/isoform/',
+    suffix='.fasta',
+    flag=1,
+    sv_fpn=None,
+    # sv_fpn=to('data/find.txt'),
+)
+print(df_isof)
+
+df_isof['canonical'] = df_isof[0].apply(lambda x: x.split('-')[0])
+print(df_isof)
+
+df_isof_tm = df_isof.loc[df_isof['canonical'].isin(df_cano[0].values)]
+print(df_isof_tm)
+
+pp.io.move_files(
+    pds_mv=df_isof_tm[0],
+    mv_from_fp='data/isoform/',
+    mv_to_fp='data/isoform/transmembrane/',
+    suffix='.fasta',
+)
+```

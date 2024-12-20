@@ -8,6 +8,7 @@ from . import (
     # fcsdf,
     fpmsa,
     fpseq,
+    fpstr,
     fpsite,
     external,
     convert,

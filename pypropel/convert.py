@@ -33,11 +33,15 @@ def single2many(
 
 def many2single(
         fasta_fpn,
+        mode: str = 'uniprot',
+        species: str = 'HUMAN',
         sv_fp : str = None
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     cm2s = ConvertM2S(
         input_fpn=fasta_fpn,
         in_format='fasta',
+        mode=mode,
+        species=species,
         sv_fp=sv_fp,
     )
     df = cm2s.df

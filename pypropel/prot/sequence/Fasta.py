@@ -44,8 +44,21 @@ class Fasta:
             prot_name = str(e[0])
             seq = str(e[1])
             print('No.{} saving {} in FASTA format.'.format(i+1, prot_name))
-            f = open(sv_fp + prot_name + '.fasta', 'w')
-            f.write('>' + prot_name + '\n')
-            f.write(seq + '\n')
-            f.close()
+            self.save_indiv(
+                fasta_id=prot_name,
+                seq=seq,
+                sv_fp=sv_fp,
+            )
         return 0
+
+    def save_indiv(
+            self,
+            fasta_id,
+            seq,
+            sv_fp,
+    ):
+        f = open(sv_fp + fasta_id + '.fasta', 'w')
+        f.write('>' + fasta_id + '\n')
+        f.write(str(seq))
+        f.close()
+        return

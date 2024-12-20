@@ -100,7 +100,7 @@ class distance(metaclass=ABCMeta):
                 min_residue_dist = min(residue_dist)
                 dist_matrix.append([
                     index_1 + 1 - count_hetamt_1,
-                    three_to_one(residue_1.get_resname()),
+                    three_to_one[residue_1.get_resname()],
                     residue_1.id[1],
                     min_residue_dist
                 ])
@@ -160,10 +160,10 @@ class distance(metaclass=ABCMeta):
                         # print(min_dist)
                         dist_matrix.append([
                             index_1 + 1 - count_hetamt_1,
-                            three_to_one(residue_1.get_resname()),
+                            three_to_one[residue_1.get_resname()],
                             residue_1.id[1],
                             index_2 + 1 - count_hetamt_2,
-                            'U' if residue_2.get_resname() == 'UNK' else three_to_one(residue_2.get_resname()),
+                            'U' if residue_2.get_resname() == 'UNK' else three_to_one[residue_2.get_resname()],
                             residue_2.id[1],
                             min_dist,
                         ])

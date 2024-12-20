@@ -21,8 +21,20 @@ def read(
     return Fasta().get(fasta_fpn)
 
 
+def save_sgl(
+        fasta_id,
+        seq,
+        sv_fp='./',
+):
+    return Fasta().save_indiv(
+        fasta_id=fasta_id,
+        seq=seq,
+        sv_fp=sv_fp,
+    )
+
+
 def save(
-        list_2d: list[list[str]],
+        list_2d: List[List[str]],
         sv_fp: str,
 ):
     return Fasta().save(
