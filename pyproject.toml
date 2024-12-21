@@ -13,6 +13,7 @@ biopython = "^1.84"
 seaborn = "^0.13.2"
 matplotlib = "^3.9.1"
 scikit-learn = "^1.5.1"
+mini3di = "^0.2.1"
 
 
 [build-system]

@@ -390,6 +390,20 @@ python-dateutil = ">=2.7"
 dev = ["meson-python (>=0.13.1,<0.17.0)", "pybind11 (>=2.13.2,!=2.13.3)", "setuptools (>=64)", "setuptools_scm (>=7)"]
 
 [[package]]
+name = "mini3di"
+version = "0.2.1"
+description = "A NumPy port of the foldseek code for encoding structures to 3di."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mini3di-0.2.1-py2.py3-none-any.whl", hash = "sha256:304479e7e6c81065b616fb2b745a3e17c41e69d4f382ee83b57e7c3f4a401e85"},
+    {file = "mini3di-0.2.1.tar.gz", hash = "sha256:dfc4a63aaba175b05e9cc1f260e1bfcd2832ff3235537146a334b6a2179f8a96"},
+]
+
+[package.dependencies]
+numpy = "*"
+
+[[package]]
 name = "numpy"
 version = "1.26.4"
 description = "Fundamental package for array computing in Python"
@@ -822,4 +836,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "6bf6de41d1f469c9e4bc1c5fb7c42b087fa20acdad3901427ae74787d8af9369"
+content-hash = "1e9923be34b41a48ef2565a0a0dd803914ddf691f9d5c8cd71ec070b934bd043"
