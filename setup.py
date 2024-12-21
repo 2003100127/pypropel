@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pypropel",
-    version="0.1.3",
+    version="0.1.4",
     keywords=["conda", "pypropel"],
     description="processing protein data",
     long_description="processing protein data",
@@ -23,6 +23,7 @@ setup(
         'seaborn',
         'biopython',
         'scikit-learn',
+        'mini3di',
         # 'pyfiglet', # ==0.8.post1
     ],
     entry_points={
