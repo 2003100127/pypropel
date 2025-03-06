@@ -84,11 +84,16 @@ import pypropel as pp
 ## 📄 Citation
 ``` shell
 @article{pypropel,
-    title = {PyPropel},
-    author = {Jianfeng Sun},
-    doi = {xxx},
-    url = {https://github.com/2003100127/pypropel},
-    year = {2024},
+   author = {Jianfeng Sun and Jinlong Ru and Adam P. Cribbs and Dapeng Xiong},
+   doi = {10.1186/s12859-025-06079-3},
+   issn = {1471-2105},
+   issue = {1},
+   journal = {BMC Bioinformatics},
+   month = {3},
+   pages = {70},
+   title = {PyPropel: a Python-based tool for efficiently processing and characterising protein data},
+   volume = {26},
+   year = {2025},
 }
 ```
 

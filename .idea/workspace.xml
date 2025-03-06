@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2045bc2-f928-4f74-b5d2-13b785a17b6c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/change-log.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/change-log.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tutorial/file/IO.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/file/IO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/convert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/fpsite.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/fpsite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/io.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/io.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/sequence/ConvertM2S.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/sequence/ConvertM2S.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pypropel/fpseq.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/fpseq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pypropel/prot/feature/sequence/Composition.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/feature/sequence/Composition.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pypropel/prot/sequence/Fasta.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/sequence/Fasta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/Distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/Distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/Label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/Complex.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/Complex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/TransmitterComplex.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check/TransmitterComplex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/seq.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/seq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,54 +38,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Binning.executor": "Run",
-    "Python.Complex.executor": "Run",
-    "Python.Composition.executor": "Run",
-    "Python.Conservation.executor": "Run",
-    "Python.ConvertM2S.executor": "Run",
-    "Python.Dispatch.executor": "Run",
-    "Python.Dispatcher.executor": "Run",
-    "Python.Format.executor": "Run",
-    "Python.Frequency.executor": "Run",
-    "Python.JSD.executor": "Run",
-    "Python.Label.executor": "Run",
-    "Python.MetricFormatter.executor": "Run",
-    "Python.OneToOne.executor": "Run",
-    "Python.Pair.executor": "Run",
-    "Python.Position.executor": "Run",
-    "Python.ROCPR.executor": "Run",
-    "Python.Run.executor": "Run",
-    "Python.Text.executor": "Run",
-    "Python.TransmitterComplex.executor": "Run",
-    "Python.Variant.executor": "Run",
-    "Python.convert.executor": "Run",
-    "Python.dataset.executor": "Run",
-    "Python.dist.executor": "Run",
-    "Python.eval.executor": "Debug",
-    "Python.fpmsa.executor": "Run",
-    "Python.fpseq.executor": "Run",
-    "Python.fpsite.executor": "Run",
-    "Python.io.executor": "Run",
-    "Python.msa.executor": "Run",
-    "Python.plot.executor": "Run",
-    "Python.seq.executor": "Run",
-    "Python.struct.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Document/Programming/Python/umiche",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "PyScientificConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Binning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Complex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Composition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Conservation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ConvertM2S.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dispatch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dispatcher.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Format.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Frequency.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JSD.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Label.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MetricFormatter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.OneToOne.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Pair.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Position.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ROCPR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Text.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TransmitterComplex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Variant.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convert.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dist.executor&quot;: &quot;Run&quot;,
+    &quot;Python.eval.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.fpmsa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fpseq.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fpsite.executor&quot;: &quot;Run&quot;,
+    &quot;Python.io.executor&quot;: &quot;Run&quot;,
+    &quot;Python.msa.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.seq.executor&quot;: &quot;Run&quot;,
+    &quot;Python.struct.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Document/Programming/Python/umiche&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;PyScientificConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Document\Programming\Python\pypropel\docs\tutorial" />
@@ -106,7 +95,30 @@
       <recent name="D:\Document\Programming\Python\pypropel\docs\tutorial\protein1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Dispatcher">
+  <component name="RunManager" selected="Python.Composition">
+    <configuration name="Composition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pypropel" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypropel/prot/feature/sequence" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/prot/feature/sequence/Composition.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Dispatcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pypropel" />
       <option name="ENV_FILES" value="" />
@@ -199,36 +211,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fpseq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pypropel" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypropel" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypropel/fpseq.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Composition" />
         <item itemvalue="Python.Dispatcher" />
         <item itemvalue="Python.eval" />
         <item itemvalue="Python.TransmitterComplex" />
         <item itemvalue="Python.fpmsa" />
-        <item itemvalue="Python.fpseq" />
       </list>
     </recent_temporary>
   </component>
@@ -271,6 +260,12 @@
       <workItem from="1734357675953" duration="22057000" />
       <workItem from="1734395875555" duration="13006000" />
       <workItem from="1734619392206" duration="17791000" />
+      <workItem from="1734790585820" duration="1245000" />
+      <workItem from="1739765718876" duration="192000" />
+      <workItem from="1739778300515" duration="884000" />
+      <workItem from="1740860080896" duration="1041000" />
+      <workItem from="1740863263036" duration="1326000" />
+      <workItem from="1741298661647" duration="1314000" />
     </task>
     <servers />
   </component>
@@ -292,7 +287,7 @@
     <SUITE FILE_PATH="coverage/pypropel$Complex.coverage" NAME="Complex Coverage Results" MODIFIED="1722189514340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/check" />
     <SUITE FILE_PATH="coverage/pypropel$Run.coverage" NAME="Run Coverage Results" MODIFIED="1722194588002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/distance/isite/heavy" />
     <SUITE FILE_PATH="coverage/pypropel$Dispatch.coverage" NAME="Dispatch Coverage Results" MODIFIED="1722202396723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/tool/isite" />
-    <SUITE FILE_PATH="coverage/pypropel$Composition.coverage" NAME="Composition Coverage Results" MODIFIED="1722118820392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/feature/alignment" />
+    <SUITE FILE_PATH="coverage/pypropel$Composition.coverage" NAME="Composition Coverage Results" MODIFIED="1739779952719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/feature/sequence" />
     <SUITE FILE_PATH="coverage/pypropel$msa.coverage" NAME="msa Coverage Results" MODIFIED="1722210361972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel" />
     <SUITE FILE_PATH="coverage/pypropel$Format.coverage" NAME="Format Coverage Results" MODIFIED="1722182609382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/structure/chain" />
     <SUITE FILE_PATH="coverage/pypropel$Text.coverage" NAME="Text Coverage Results" MODIFIED="1722761847709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pypropel/prot/uniprot" />

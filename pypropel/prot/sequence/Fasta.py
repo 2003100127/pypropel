@@ -35,6 +35,10 @@ class Fasta:
         sequence = "".join([str(seq.seq) for seq in SeqIO.parse(fasta_fpn, "fasta")])
         return sequence
 
+    def get_line(self, fasta_fpn):
+        f = open(fasta_fpn, "r")
+        return [[str(e) for e in line.split('\n')] for line in f][1][0]
+
     def save(
             self,
             list_2d,

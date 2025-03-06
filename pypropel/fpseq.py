@@ -14,22 +14,44 @@ from pypropel.prot.feature.sequence.Length import Length
 def composition(
         seq: str,
         k_spaced: int = 1,
+        mol_type='aa',
         mode: str = 'aac',
 ):
     if mode == 'aac':
-        return Composition(seq).aac()
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).aac()
     elif mode == 'dac':
-        return Composition(seq).dac()
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).dac()
     elif mode == 'tac':
-        return Composition(seq).tac()
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).tac()
     elif mode == 'qac':
-        return Composition(seq).qac()
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).qac()
     elif mode == 'cksnap':
-        return Composition(seq).cksnap(k=k_spaced)
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).cksnap(k=k_spaced)
     elif mode == 'aveanf':
-        return Composition(seq).aveanf()
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).aveanf()
     else:
-        return Composition(seq).aac()
+        return Composition(
+            sequence=seq,
+            mol_type=mol_type,
+        ).aac()
 
 
 def length(

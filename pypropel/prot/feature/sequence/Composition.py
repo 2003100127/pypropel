@@ -6,7 +6,8 @@ __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
 from collections import Counter
-from pypropel.prot.sequence.Symbol import Symbol
+from pypropel.prot.sequence.Symbol import Symbol as aasymbol
+from pypropel.dna.sequence.Symbol import Symbol as dnasymbol
 from pypropel.util.Console import Console
 
 
@@ -18,11 +19,16 @@ class Composition:
     def __init__(
             self,
             sequence,
+            mol_type='aa',
             verbose: bool = True,
     ):
         self.sequence = sequence
-        self.symbol = Symbol()
-        self.aa = self.symbol.single()
+        if mol_type == 'aa':
+            self.symbol = aasymbol()
+            self.aa = self.symbol.single()
+        else:
+            self.symbol = dnasymbol()
+            self.aa = self.symbol.single()
 
         self.console = Console()
         self.console.verbose = verbose
@@ -117,4 +123,4 @@ if __name__ == "__main__":
 
     # print(p.cksnap(2))
 
-    # print(p.aveanf())
+    print(p.aveanf())
