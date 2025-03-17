@@ -5,11 +5,10 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-from typing import Tuple
-
 import pandas as pd
 
 from pypropel.prot.tool.isite.Dispatcher import Dispatcher
+from pypropel.util.Evaluate import Evaluate as evalmetr
 
 
 def sitewise_segment(
@@ -40,6 +39,26 @@ def sitewise_segment(
         sort=sort,
         sv_fp=sv_fp,
     )
+
+
+def met(
+        y_ob,
+        y_true,
+        met,
+):
+    cont = {
+        "accuracy": evalmetr().accuracy,
+        "accuracytopk": evalmetr().accuracytopk,
+        "precision": evalmetr().precision,
+        "recall": evalmetr().recall,
+        "specificity": evalmetr().specificity,
+        "mcc": evalmetr().mcc,
+        "f1score": evalmetr().f1score,
+        "fbscore": evalmetr().fbscore,
+        "roc": evalmetr().roc,
+        "prc": evalmetr().prc,
+    }
+    return cont[met](y_ob, y_true)
 
 
 if __name__ == "__main__":
