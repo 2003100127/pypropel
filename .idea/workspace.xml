@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d2045bc2-f928-4f74-b5d2-13b785a17b6c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pypropel/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/pypropel/eval.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +261,7 @@
       <workItem from="1740860080896" duration="1041000" />
       <workItem from="1740863263036" duration="1326000" />
       <workItem from="1741298661647" duration="5351000" />
-      <workItem from="1741966824755" duration="3238000" />
+      <workItem from="1741966824755" duration="3903000" />
     </task>
     <servers />
   </component>
