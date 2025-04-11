@@ -1,6 +1,6 @@
 
 <figure markdown="span">
-  ![Image title](./img/pypropel-logo.png){ width="200" align="left" }
+  ![Image title](./img/pypropel-logo-v3.png){ width="200" align="left" }
 </figure>
 
 !!! tip ""
