@@ -109,7 +109,8 @@ if __name__ == "__main__":
     from pypropel.util.Reader import Reader as pfreader
     from pypropel.path import to
 
-    df = pfreader().generic(df_fpn='./cplx.txt')
+    # df = pfreader().generic(df_fpn='./cplx.txt')
+    df = pfreader().generic(df_fpn='D:\Document\Programming\Python\minverse\minverse\data\deepisite/cplx.txt')
     # prots = df.prot.unique()[:2000]
     # prots = df.prot.unique()[2000:]
     prots = df[0].unique()

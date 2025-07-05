@@ -5,9 +5,10 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-import os
-import sys
-sys.path.append(os.path.dirname(os.getcwd()) + '/')
+# import os
+# import sys
+# sys.path.append(os.path.dirname(os.getcwd()) + '/')
+import click
 from pypropel.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
 from pypropel.util.Writer import Writer as pfwriter
 from pypropel.util.Console import Console
@@ -72,46 +73,51 @@ class Complex:
         )
 
 
-if __name__ == "__main__":
-    source = True
-    # source = False
-    if source:
-        import argparse
-        parser = argparse.ArgumentParser(description='PPIs in a complex')
-        parser.add_argument(
-            "--pdb_fp", "-fp", help='pdb file path', type=str
-        )
-        parser.add_argument(
-            "--pdb_fn", "-fn", help='complex name', type=str
-        )
-        parser.add_argument(
-            "--thres", "-t", help='threshold of dists', type=float
-        )
-        parser.add_argument(
-            "--sv_fp", "-op", help='output path', type=str
-        )
-        args = parser.parse_args()
-        # print(args)
-        if args.pdb_fp:
-            pdb_fp = args.pdb_fp
-        if args.pdb_fn:
-            prot_name = args.pdb_fn
-        if args.thres:
-            thres = args.thres
-        if args.sv_fp:
-            sv_fp = args.sv_fp
-    else:
-        from pypropel.path import to
+@click.command(context_settings=dict(help_option_names=['-h', '--help']))
+# @click.argument('method', type=str)
+@click.option(
+    '--pdb_fp', '-fp', type=str, required=True,
+    help="""pdb file path"""
+)
+@click.option(
+    '--pdb_fn', '-fn', type=str, required=True,
+    help="""complex name"""
+)
+@click.option(
+    '--thres', '-t', type=float, default=6.0, show_default=True,
+    help="""threshold of dists"""
+)
+@click.option(
+    '--sv_fp', '-o', type=str, default='./', show_default=True,
+    help="""output path"""
+)
+@click.option(
+    "--verbose", '-vb', default=True, show_default=True,
+    help="whether to print output"
+)
+def cli(
+    pdb_fp,
+    pdb_fn,
+    thres,
+    sv_fp,
+    verbose,
+):
+    """
+    This function is used to check if two protein chains in the same protein complex are interacting.
 
-        pdb_fp = to('data/pdb/complex/pdbtm/')
-        prot_name = '1aij'
-        sv_fp = to('data/pdb/complex/pdbtm/')
-        thres = 2.5
+    Examples
+    --------
+    pypropel_struct_check_cplx -fp D:/Document/Programming/Python/minverse/minverse/data/deepisite/pdbtm/cplx/ -fn 1aij -t 5.5 -o ./ -vb True
 
-    p = Complex(
+    """
+    return Complex(
         pdb_fp=pdb_fp,
-        prot_name=prot_name,
+        prot_name=pdb_fn,
         thres=thres,
         sv_fp=sv_fp,
-    )
-    p.run()
+        verbose=verbose,
+    ).run()
+
+
+if __name__ == "__main__":
+    cli()

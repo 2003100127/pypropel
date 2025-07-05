@@ -6,6 +6,8 @@ pypropel/download2.py
 pypropel/chem
 pypropel/fcsdf.py
 
+.idea
+
 __pycache__/
 *.py[cod]
 *$py.class

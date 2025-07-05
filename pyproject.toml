@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pypropel"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["Jianfeng Sun <jianfeng.sunmt@gmail.com>"]
 readme = "README.md"
@@ -14,7 +14,10 @@ seaborn = "^0.13.2"
 matplotlib = "^3.9.1"
 scikit-learn = "^1.5.1"
 mini3di = "^0.2.1"
+click = "^8.2.1"
 
+[tool.poetry.scripts]
+pypropel_struct_check_cplx = "pypropel.prot.structure.distance.isite.check.Complex:cli"
 
 [build-system]
 requires = ["poetry-core"]

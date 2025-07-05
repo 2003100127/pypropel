@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pypropel",
-    version="0.1.4",
+    version="0.1.5",
     keywords=["conda", "pypropel"],
     description="processing protein data",
     long_description="processing protein data",
@@ -17,6 +17,7 @@ setup(
     platforms="any",
     python_requires='>3.9',
     install_requires=[
+        'click',
         'pandas',
         'numpy',
         'matplotlib',
@@ -29,6 +30,7 @@ setup(
     entry_points={
         'console_scripts': [
             'pypropel=pypropel.main:main',
+            'pypropel_struct_complex=pypropel.prot.structure.distance.isite.check.Complex:cli',
         ],
     }
 )
