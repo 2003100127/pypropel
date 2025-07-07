@@ -8,7 +8,9 @@ __maintainer__ = "Jianfeng Sun"
 # import os
 # import sys
 # sys.path.append(os.path.dirname(os.getcwd()) + '/')
+
 import click
+
 from pypropel.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
 from pypropel.util.Writer import Writer as pfwriter
 from pypropel.util.Console import Console

@@ -5,9 +5,9 @@ __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-import os
-import sys
-sys.path.append(os.path.dirname(os.getcwd()) + '/')
+# import os
+# import sys
+# sys.path.append(os.path.dirname(os.getcwd()) + '/')
 
 import pandas as pd
 from Bio.PDB.PDBParser import PDBParser

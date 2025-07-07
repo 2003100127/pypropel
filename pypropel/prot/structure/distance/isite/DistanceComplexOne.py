@@ -1,13 +1,16 @@
 __author__ = "Jianfeng Sun"
 __version__ = "v1.0"
-__copyright__ = "Copyright 2024"
+__copyright__ = "Copyright 2025"
 __license__ = "GPL v3.0"
 __email__ = "jianfeng.sunmt@gmail.com"
 __maintainer__ = "Jianfeng Sun"
 
-import os
-import sys
-sys.path.append(os.path.dirname(os.getcwd()) + '/')
+# import os
+# import sys
+# sys.path.append(os.path.dirname(os.getcwd()) + '/')
+
+import click
+
 import pandas as pd
 from pypropel.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll as aaaheavy
 from pypropel.util.Writer import Writer as pfwriter
@@ -15,7 +18,7 @@ from pypropel.prot.sequence.Name import Name as chainname
 from pypropel.util.Console import Console
 
 
-class Run:
+class DistanceComplexOne:
 
     def __init__(
             self,
@@ -39,13 +42,11 @@ class Run:
 
     def dist_without_aa(self, ):
         """
-        order = str(
-                'echo ' + '"' + 'conda activate common && python ' +
-                self.cloud_fp + ' -pn ' + prot_name + ' -pc1 ' +
-                prot_chain1 + ' -pdbp ' + self.pdb_path +
-                ' -k heavy' + ' -sp ' + self.sv_fp + ' "' +
-                " | qsub -l vf=2g -pe serial 4 -q all.q -N 'j.sun' "
-            )
+
+        Examples
+        --------
+        pypropel_struct_dist_cplx1 -fp D:/Document/Programming/Python/minverse/minverse/data/deepisite/pdbtm/cplx/ -fn 1aij -c L -k dist_1c_vs_allc_cplx -m heavy -o ./ -vb False
+
         Returns
         -------
 
@@ -77,7 +78,7 @@ class Run:
                 else:
                     pass
         df = pd.concat([pd.DataFrame(pos_list), df_dist], axis=1)
-        print(df)
+        self.console.print("=========>dist dataframe: {}".format(df))
         file_chain = chainname().chain(self.prot_chain)
         self.pfwriter.generic(
             df,
@@ -88,17 +89,11 @@ class Run:
 
     def dist_with_aa(self, thres=6):
         """
-        order = str(
-                'echo ' + '"' + 'source activate common && python ' +
-                self.cloud_fp + ' -pn ' + prot_name + ' -pc1 ' +
-                prot_chain1 + ' -pdbp ' + self.pdb_path +
-                ' -k heavy' + ' -sp ' + self.sv_fp + ' "' +
-                " | qsub -l vf=2g -pe serial 4 -q all.q -N 'j.sun' "
-            )
-        ..  @example:
-            ---------
+
+        Examples
+        --------
             python ./template/Mutual.py -pn 1fft -pc1 A -pdbp ./ -k heavy -sp ./
-        :return:
+
         """
         self.console.print('=========>Protein PDB code: {}'.format(self.prot_name))
         self.console.print('=========>Chain of focus: {}'.format(self.prot_chain))
@@ -144,55 +139,54 @@ class Run:
         return
 
 
+@click.command(context_settings=dict(help_option_names=['-h', '--help']))
+@click.option(
+    '--pdb_fp', '-fp', type=str, required=True,
+    help="""pdb file path"""
+)
+@click.option(
+    '--pdb_fn', '-fn', type=str, required=True,
+    help="""complex name"""
+)
+@click.option(
+    '--chain', '-c', type=str, required=True,
+    help="""protein chain of focus"""
+)
+@click.option(
+    '--method', '-m', type=str, required=True,
+    help="""method to get distance"""
+)
+@click.option(
+    '--kind', '-k', type=str, required=True,
+    help="""different functions"""
+)
+@click.option(
+    '--sv_fp', '-o', type=str, default='./', show_default=True,
+    help="""output path"""
+)
+@click.option(
+    "--verbose", '-vb', default=True, show_default=True,
+    help="whether to print output"
+)
+def cli(
+        pdb_fp,
+        pdb_fn,
+        chain,
+        method,
+        kind,
+        sv_fp,
+        verbose,
+):
+    if kind == "dist_1c_vs_allc_cplx":
+        return DistanceComplexOne(
+            pdb_fp=pdb_fp,
+            prot_name=pdb_fn,
+            prot_chain=chain,
+            method=method,
+            sv_fp=sv_fp,
+            verbose=verbose,
+        ).dist_without_aa()
+
+
 if __name__ == "__main__":
-    # source = True
-    source = False
-    if source:
-        import argparse
-        parser = argparse.ArgumentParser(description='Distance of interaction sites')
-        parser.add_argument(
-            "--pdb_fp", "-fp", help='pdb file path', type=str
-        )
-        parser.add_argument(
-            "--pdb_fn", "-fn", help='complex name', type=str
-        )
-        parser.add_argument(
-            "--chain", "-c", help='protein chain of focus', type=str
-        )
-        parser.add_argument(
-            "--method", "-m", help='method', type=str
-        )
-        parser.add_argument(
-            "--sv_fp", "-op", help='output path', type=str
-        )
-        args = parser.parse_args()
-        if args.pdb_fp:
-            pdb_fp = args.pdb_fp
-        if args.pdb_fn:
-            prot_name = args.pdb_fn
-        if args.chain:
-            prot_chain = args.chain
-        if args.method:
-            method = args.method
-        if args.sv_fp:
-            sv_fp = args.sv_fp
-    else:
-        from pypropel.path import to
-
-        pdb_fp = to('data/pdb/complex/pdbtm/')
-        prot_name = '1aij'
-        prot_chain = 'L'
-        method = 'heavy'
-        sv_fp = to('data/pdb/complex/pdbtm/')
-
-    p = Run(
-        pdb_fp=pdb_fp,
-        prot_name=prot_name,
-        prot_chain=prot_chain,
-        method=method,
-        sv_fp=sv_fp,
-    )
-
-    p.dist_without_aa()
-
-    # p.dist_with_aa()
+    cli()

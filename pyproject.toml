@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pypropel"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 authors = ["Jianfeng Sun <jianfeng.sunmt@gmail.com>"]
 readme = "README.md"
@@ -18,6 +18,7 @@ click = "^8.2.1"
 
 [tool.poetry.scripts]
 pypropel_struct_check_cplx = "pypropel.prot.structure.distance.isite.check.Complex:cli"
+pypropel_struct_dist_cplx1 = "pypropel.prot.structure.distance.isite.DistanceComplexOne:cli"
 
 [build-system]
 requires = ["poetry-core"]

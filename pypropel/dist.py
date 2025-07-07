@@ -6,16 +6,16 @@ __maintainer__ = "Jianfeng Sun"
 __email__="jianfeng.sunmt@gmail.com"
 
 from typing import List, Dict
+from typing_extensions import deprecated
 
 import pandas as pd
 
 from pypropel.prot.structure.distance.isite.heavy.AllAgainstAll import AllAgainstAll
 from pypropel.prot.structure.distance.isite.heavy.OneToOne import OneToOne
-from pypropel.prot.structure.distance.isite.heavy.Run import Run
+from pypropel.prot.structure.distance.isite.DistanceComplexOne import DistanceComplexOne
 from pypropel.prot.structure.distance.isite.check.Complex import Complex
 from pypropel.prot.structure.distance.isite.check.Pair import Pair
 from pypropel.prot.structure.distance.isite.Label import Label
-from pypropel.prot.structure.distance.isite.check.TransmitterComplex import TransmitterComplex
 
 
 def one_vs_one(
@@ -93,7 +93,7 @@ def complex_calc_all(
         method : str,
         sv_fp : str,
 ):
-    return Run(
+    return DistanceComplexOne(
         pdb_fp=pdb_fp,
         prot_name=prot_name,
         prot_chain=prot_chain,
@@ -109,7 +109,7 @@ def complex_calc_inter(
         method : str,
         sv_fp : str,
 ):
-    return Run(
+    return DistanceComplexOne(
         pdb_fp=pdb_fp,
         prot_name=prot_name,
         prot_chain=prot_chain,
@@ -118,24 +118,25 @@ def complex_calc_inter(
     ).dist_with_aa()
 
 
-def cloud_check(
-        order_list,
-        job_fp,
-        job_fn,
-        cpu,
-        memory,
-        method,
-        submission_method,
-):
-    return TransmitterComplex(
-        order_list=order_list,
-        job_fp=job_fp,
-        job_fn=job_fn,
-        cpu=cpu,
-        memory=memory,
-        method=method,
-        submission_method=submission_method,
-    ).execute()
+# @deprecated
+# def cloud_check(
+#         order_list,
+#         job_fp,
+#         job_fn,
+#         cpu,
+#         memory,
+#         method,
+#         submission_method,
+# ):
+#     return TransmitterComplex(
+#         order_list=order_list,
+#         job_fp=job_fp,
+#         job_fn=job_fn,
+#         cpu=cpu,
+#         memory=memory,
+#         method=method,
+#         submission_method=submission_method,
+#     ).execute()
 
 
 def labelling(
