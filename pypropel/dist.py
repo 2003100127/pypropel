@@ -143,12 +143,14 @@ def labelling(
         dist_fp,
         prot_name,
         file_chain,
+        header=0,
         cutoff=6,
 ) -> pd.DataFrame:
     return Label(
         dist_fp=dist_fp,
         prot_name=prot_name,
         file_chain=file_chain,
+        header=header,
         cutoff=cutoff,
     ).attach()
 
@@ -158,12 +160,14 @@ def interation_partners(
         prot_name,
         file_chain,
         pdb_fp,
+        header=0,
         cutoff=6,
 ) -> List:
     return Label(
         dist_fp=dist_fp,
         prot_name=prot_name,
         file_chain=file_chain,
+        header=header,
         cutoff=cutoff,
     ).partner(
         pdb_fp=pdb_fp,

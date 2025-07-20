@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pypropel",
-    version="0.1.6",
+    version="0.1.7",
     keywords=["conda", "pypropel"],
     description="processing protein data",
     long_description="processing protein data",

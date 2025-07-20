@@ -24,12 +24,14 @@ class Label:
             prot_name,
             file_chain,
             cutoff=6,
+            header=0,
             verbose: bool = True,
     ):
         self.prot_name = prot_name
         self.file_chain = file_chain
         self.dist_fpn = dist_fp + self.prot_name + self.file_chain + '.dist'
         self.cutoff = cutoff
+        self.header = header
 
         self.pfreader = pfreader()
         self.computlib = computlib()
@@ -39,7 +41,7 @@ class Label:
     def attach(self, ):
         self.console.print('================>Labeling data...')
         start_time = time.time()
-        df_dist = self.pfreader.generic(self.dist_fpn, header=0)
+        df_dist = self.pfreader.generic(self.dist_fpn, header=self.header)
         # print(df_dist)
         dists = df_dist.iloc[:, 3:]
         dist_mins = dists.min(axis=1)
