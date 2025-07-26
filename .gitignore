@@ -3,8 +3,6 @@ pypropel/data/
 pypropel/path.py
 pypropel/download.py
 pypropel/download2.py
-pypropel/chem
-pypropel/fcsdf.py
 
 .idea
 
